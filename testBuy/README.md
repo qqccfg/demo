@@ -1,4 +1,4 @@
-# 商城
+# 商城服务端
 
 1. 使用springboot+mybatis +logback+zookeeper+ redis+elasticsearch+elasticJob+shardingJdbc+springcloud（ 服务发现 -eureka，配置中心，日志侦探-zipkin，熔断-hystrix，服务调用-feign，网关-zuul）。
 2. 业务

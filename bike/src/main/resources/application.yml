@@ -1,0 +1,39 @@
+#startup
+server:
+    port: 8888
+#Spring
+spring:
+  application:
+    name: bike
+  profiles:
+    active: dev
+#datasource
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    maxActive: 20
+    initialSize: 5
+    maxWait: 60000
+    minIdle: 0
+    validationQuery: select 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    minEvictableIdleTimeMillis: 25200000
+    removeAbandoned: true
+    timeBetweenEvictionRunsMillis: 60000
+    removeAbandonedTimeout: 1800
+    logAbandoned: true
+    filters: mergeStat
+
+
+mybatis:
+  mapper-locations: classpath:com/test/**/**.xml
+  type-aliases-package: classpath:com.test.**.entity
+#log
+logging:
+  config: classpath:logback.xml
+
+
+
+

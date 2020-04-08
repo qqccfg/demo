@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/test-buy-gateway/test-buy-gateway.iml" filepath="$PROJECT_DIR$/test-buy-gateway/test-buy-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-buy-generate-key/test-buy-generate-key.iml" filepath="$PROJECT_DIR$/test-buy-generate-key/test-buy-generate-key.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-buy-scheduler/test-buy-scheduler.iml" filepath="$PROJECT_DIR$/test-buy-scheduler/test-buy-scheduler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-buy-service-config/test-buy-service-config.iml" filepath="$PROJECT_DIR$/test-buy-service-config/test-buy-service-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-buy-service-monitor/test-buy-service-monitor.iml" filepath="$PROJECT_DIR$/test-buy-service-monitor/test-buy-service-monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-buy-service-registry/test-buy-service-registry.iml" filepath="$PROJECT_DIR$/test-buy-service-registry/test-buy-service-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-buy-stock/test-buy-stock.iml" filepath="$PROJECT_DIR$/test-buy-stock/test-buy-stock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-buy-trade/test-buy-trade.iml" filepath="$PROJECT_DIR$/test-buy-trade/test-buy-trade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-buy-user/test-buy-user.iml" filepath="$PROJECT_DIR$/test-buy-user/test-buy-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testBuy.iml" filepath="$PROJECT_DIR$/testBuy.iml" />
+    </modules>
+  </component>
+</project>

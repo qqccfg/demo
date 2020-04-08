@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.testbuytrade.product.dao.ProductMapper" >
+  <resultMap id="BaseResultMap" type="com.test.testbuytrade.product.entity.Product" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="category_id" property="categoryId" jdbcType="BIGINT" />
+    <result column="brand_id" property="brandId" jdbcType="BIGINT" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update" property="update" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="SkuBaseResultMap" type="com.test.testbuytrade.product.entity.ProductSku" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="spu_id" property="spuId" jdbcType="BIGINT" />
+    <result column="sku_name" property="skuName" jdbcType="VARCHAR" />
+    <result column="sku_price" property="skuPrice" jdbcType="INTEGER" />
+    <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="enable_flag" property="enableFlag" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="SkuBaseResultMap" type="com.test.testbuytrade.product.entity.SpuPropertyOption" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="sku_id" property="skuId" jdbcType="BIGINT" />
+    <result column="property_id" property="propertyId" jdbcType="BIGINT" />
+    <result column="property_option_id" property="propertyOptionId" jdbcType="BIGINT" />
+    <result column="enable_flag" property="enableFlag" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, category_id, brand_id, product_name, price, status, create_time, update
+  </sql>
+  <sql id="productBase_Column_List" >
+    p.id, p.category_id, p.brand_id, p.product_name, p.price, p.status, p.create_time, p.update
+  </sql>
+  <sql id="openBase_Column_List" >
+    o.id, o.sku_id, o.property_id, o.property_option_id, o.enable_flag, o.create_time, o.update_time
+  </sql>
+  <sql id="skuBase_Column_List" >
+    s.id, s.spu_id, s.sku_name, s.sku_price, s.img_url, s.enable_flag, s.create_time, s.update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_product
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectBycategoryId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_product
+    where id = #{categoryId}
+  </select>
+  <select id="selectByPrimaryKeyWithSku" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="productBase_Column_List" />
+    <include refid="skuBase_Column_List" />
+    <include refid="openBase_Column_List" />
+    from t_product p
+    left join t_sku s on s.spu=p.id
+    left join t_spu_property_option o on o.sku_id=s.id
+    where id = #{productId} and s.enable_flag = 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.test.testbuytrade.product.entity.Product" >
+    insert into t_product (id, category_id, brand_id, 
+      product_name, price, status, 
+      create_time, update)
+    values (#{id,jdbcType=BIGINT}, #{categoryId,jdbcType=BIGINT}, #{brandId,jdbcType=BIGINT}, 
+      #{productName,jdbcType=VARCHAR}, #{price,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{update,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.testbuytrade.product.entity.Product" >
+    insert into t_product
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+      <if test="brandId != null" >
+        brand_id,
+      </if>
+      <if test="productName != null" >
+        product_name,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="update != null" >
+        update,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="brandId != null" >
+        #{brandId,jdbcType=BIGINT},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update != null" >
+        #{update,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.testbuytrade.product.entity.Product" >
+    update t_product
+    <set >
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="brandId != null" >
+        brand_id = #{brandId,jdbcType=BIGINT},
+      </if>
+      <if test="productName != null" >
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update != null" >
+        update = #{update,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.testbuytrade.product.entity.Product" >
+    update t_product
+    set category_id = #{categoryId,jdbcType=BIGINT},
+      brand_id = #{brandId,jdbcType=BIGINT},
+      product_name = #{productName,jdbcType=VARCHAR},
+      price = #{price,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update = #{update,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

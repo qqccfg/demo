@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    stock:
+      url: jdbc:mysql://47.94.233.194:3306/mama-buy-stock
+      username: root
+      passwprd:
+    trade:
+      url: mysql://47.94.233.194:3306/mama-buy-trade
+      username: root
+      password:
+    user:
+      url: mysql://47.94.233.194:3306/mama-buy-stock
+      username:
+      password:
+  cloud:
+    config:
+      stream:
+        kafka:
+          binder:
+            brokers: ${kafka.brokers.host}
+            zk-nodes: ${zookeeper.host}
+            auto-create-topics: true
+regCenter:
+  serverList: ${zookeeper.host}
+  namespace: elastic-job-lite-springboot
+stockJob:
+  cron: 0 0/3 * * * ?
+  shardingTotalCount: 1 #2
+  shardingItemParameters: 0=Chengdu #,1=Beijing

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.testbuytrade.trade.dao.TradeItemMapper" >
+  <resultMap id="BaseResultMap" type="com.test.testbuytrade.trade.entity.TradeItem" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_uuid" property="userUuid" jdbcType="BIGINT" />
+    <result column="trade_no" property="tradeNo" jdbcType="BIGINT" />
+    <result column="sku" property="sku" jdbcType="INTEGER" />
+    <result column="sku_name" property="skuName" jdbcType="VARCHAR" />
+    <result column="current_price" property="currentPrice" jdbcType="DECIMAL" />
+    <result column="sku_image_url" property="skuImageUrl" jdbcType="VARCHAR" />
+    <result column="quantity" property="quantity" jdbcType="INTEGER" />
+    <result column="total_price" property="totalPrice" jdbcType="DECIMAL" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_uuid, trade_no, sku, sku_name, current_price, sku_image_url, quantity, total_price, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_trade_item_0
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_trade_item_0
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.test.testbuytrade.trade.entity.TradeItem" >
+    insert into t_trade_item_0 (id, user_uuid, trade_no, 
+      sku, sku_name, current_price, 
+      sku_image_url, quantity, total_price, 
+      create_time, update_time)
+    values (#{id,jdbcType=BIGINT}, #{userUuid,jdbcType=BIGINT}, #{tradeNo,jdbcType=BIGINT}, 
+      #{sku,jdbcType=INTEGER}, #{skuName,jdbcType=VARCHAR}, #{currentPrice,jdbcType=DECIMAL}, 
+      #{skuImageUrl,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, #{totalPrice,jdbcType=DECIMAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.testbuytrade.trade.entity.TradeItem" >
+    insert into t_trade_item_0
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userUuid != null" >
+        user_uuid,
+      </if>
+      <if test="tradeNo != null" >
+        trade_no,
+      </if>
+      <if test="sku != null" >
+        sku,
+      </if>
+      <if test="skuName != null" >
+        sku_name,
+      </if>
+      <if test="currentPrice != null" >
+        current_price,
+      </if>
+      <if test="skuImageUrl != null" >
+        sku_image_url,
+      </if>
+      <if test="quantity != null" >
+        quantity,
+      </if>
+      <if test="totalPrice != null" >
+        total_price,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userUuid != null" >
+        #{userUuid,jdbcType=BIGINT},
+      </if>
+      <if test="tradeNo != null" >
+        #{tradeNo,jdbcType=BIGINT},
+      </if>
+      <if test="sku != null" >
+        #{sku,jdbcType=INTEGER},
+      </if>
+      <if test="skuName != null" >
+        #{skuName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentPrice != null" >
+        #{currentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="skuImageUrl != null" >
+        #{skuImageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null" >
+        #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="totalPrice != null" >
+        #{totalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.testbuytrade.trade.entity.TradeItem" >
+    update t_trade_item_0
+    <set >
+      <if test="userUuid != null" >
+        user_uuid = #{userUuid,jdbcType=BIGINT},
+      </if>
+      <if test="tradeNo != null" >
+        trade_no = #{tradeNo,jdbcType=BIGINT},
+      </if>
+      <if test="sku != null" >
+        sku = #{sku,jdbcType=INTEGER},
+      </if>
+      <if test="skuName != null" >
+        sku_name = #{skuName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentPrice != null" >
+        current_price = #{currentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="skuImageUrl != null" >
+        sku_image_url = #{skuImageUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null" >
+        quantity = #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="totalPrice != null" >
+        total_price = #{totalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.testbuytrade.trade.entity.TradeItem" >
+    update t_trade_item_0
+    set user_uuid = #{userUuid,jdbcType=BIGINT},
+      trade_no = #{tradeNo,jdbcType=BIGINT},
+      sku = #{sku,jdbcType=INTEGER},
+      sku_name = #{skuName,jdbcType=VARCHAR},
+      current_price = #{currentPrice,jdbcType=DECIMAL},
+      sku_image_url = #{skuImageUrl,jdbcType=VARCHAR},
+      quantity = #{quantity,jdbcType=INTEGER},
+      total_price = #{totalPrice,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

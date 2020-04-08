@@ -1,0 +1,32 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git 仓库地址
+          username: ""
+          password: ""
+          search-paths: gateway-config,user-service-config,trade-service-config,stock-service-config,common-config,key-generator-config,scheduler-config
+    bus:
+      trace:
+        enabled: true
+    stream:
+      kafka:
+        binder:
+          brokers: 47.106.184.71:9092
+          zk-nodes: 47.106.184.71:2181
+          auto-create-topics: true
+eureka:
+  client:
+    service-url:
+      defaultZone: #服务注册地址
+  instance:
+    ip-address: 139.199.158.174
+    prefer-ip-address: true
+management:
+  security:
+    enabled: false

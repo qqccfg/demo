@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration name="demo" status="debug">
+    <properties>
+        <property name="log_dir">/logs/tyre</property>
+        <property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} |-%-5level [%thread] %c [%L] -| %msg%n</property>
+    </properties>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%msg%n"/>
+        </Console>
+        <RollingFile name="normal">
+            <fileName>${log_dir}/normal/tyre-normal.log</fileName>
+            <PatternLayout Pattern="${PATTERN}"/>
+            <filePattern>${log_dir}/normal/tyre-normal-%d{yyyy-MM-dd HH-mm}-%i.log</filePattern>
+            <DefaultRolloverStrategy max="20"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="30MB"/>
+                <TimeBasedTriggeringPolicy  />
+            </Policies>
+            <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="ACCEPT"/>
+        </RollingFile>
+        <RollingFile name="error">
+            <fileName>${log_dir}/error/tyre-error.log</fileName>
+            <filePattern>${log_dir}/error/tyre-error-%d{yyyy-MM-dd HH-mm}-%i.log</filePattern>
+            <PatternLayout Pattern="${PATTERN}"/>
+            <DefaultRolloverStrategy max="20"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="30MB"/>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <root level="info">
+            <appender-ref ref="console"/>
+        </root>
+        <logger name="com.test.tyrelocation" level="debug" additivity="false">
+            <appender-ref ref="normal"/>
+            <appender-ref ref="error"/>
+            <appender-ref ref="console"/>
+        </logger>
+    </Loggers>
+</configuration>

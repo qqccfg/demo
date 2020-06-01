@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--主页    -->
+    <div th:fragment="home">
+        <div class="page-content">
+            <!-- 开始页眉-->
+            <!-- 开始主题面板 -->
+
+            <!-- 结束 主题面板 -->
+            <!-- 开始页面栏 -->
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <a href="index.html">主页</a>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- 结束 页面栏 -->
+            <!-- 开始 页面标题-->
+            <h1 class="page-title"> 欢迎回来
+                <small>用户名（数据库取）</small>
+            </h1>
+            <!-- 结束页面标题-->
+            <!-- 结束 页眉-->
+            <!-- 开始 卖家成绩表 STATS 1-->
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+
+                        <div class="widget-thumb-wrap">
+                            <i class="widget-thumb-icon bg-green ">
+                                <span class="iconfont">&#xe606;</span>
+                            </i>
+                            <div class="widget-thumb-body">
+                                    <span class="widget-thumb-subtitle">
+                                        余额:<a >￥数据库中取</a>
+                                    </span>
+                                <span class="widget-thumb-subtitle">
+                                        代金券:<a >数据库中取</a>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                        <div class="widget-thumb-wrap">
+                            <i class="widget-thumb-icon bg-red ">
+                                <span class="iconfont-invoice">&#xe6cf;</span>
+                            </i>
+                            <div class="widget-thumb-body">
+                                <span class="widget-thumb-subtitle">可开票金额:</span>
+                                <span class="widget-thumb-subtitle">￥(从数据库中取)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                        <div class="widget-thumb-wrap">
+                            <i class="widget-thumb-icon bg-blue">
+                                <span class="iconfont-invoice">&#xe61b;</span>
+                            </i>
+                            <div class="widget-thumb-body">
+                                    <span class="widget-thumb-subtitle">
+                                        待续费实例:<a>数据库中取</a>
+                                    </span>
+                                <span class="widget-thumb-subtitle">
+                                        待支付订单:<a>数据库中取</a>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                        <div class="widget-thumb-wrap">
+                            <i class="widget-thumb-icon bg-purple ">
+                                <span class="iconfont-invoice">&#xe61c;</span>
+                            </i>
+                            <div class="widget-thumb-body">
+                                <span class="widget-thumb-subtitle">站内信息:</span>
+                                <span class="widget-thumb-subtitle"><a>从数据中取</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!-- 结束 卖家成绩表  STATS 1-->
+            <div class="row">
+                <div class="col-lg-6 col-xs-12 col-sm-12">
+                    <!-- 开始 门户组件-->
+
+                    <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="icon-share font-red-sunglo hide"></i>
+                                <span class="caption-subject font-dark bold uppercase">消费趋势</span>
+
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div id="site_activities_loading">
+                                <img src="../assets/global/img/loading.gif" alt="loading" /> </div>
+                            <div id="site_activities_content" class="display-none">
+                                <div id="site_activities" style="height: 300px;"> </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- 结束 门户组件-->
+                </div>
+                <div class="col-lg-zi3 col-xs-12 col-sm-12">
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet light bordered">
+                        <div class="portlet-title tabbable-line">
+                            <div class="caption">
+                                <i class="icon-globe font-dark hide"></i>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab_notice" class="active" data-toggle="tab" aria-expanded="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">公告</font></font></a>
+                                </li>
+                                <li class="">
+                                    <a href="#tab_upgrade" data-toggle="tab" aria-expanded="false"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">升级</font></font></a>
+                                </li>
+                                <li class="">
+                                    <a href="#tab_new_product" class="" data-toggle="tab" aria-expanded="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新产品</font></font></a>
+                                </li>
+                                <li class="">
+                                    <a href="#tab_other" data-toggle="tab" aria-expanded="false"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">其他</font></font></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portlet-body">
+                            <!--BEGIN TABS-->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab_notice">
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroller" style="height: 300px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                                        <ul class="feeds">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="col1">
+                                                        <div class="cont">
+                                                            <div class="cont-col1">
+                                                                <div class="label label-sm label-success">
+                                                                    <i class="fa fa-bell-o"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cont-col2">
+                                                                <div class="desc"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">公告</font></font></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                </div>
+                                <div class="tab-pane" id="tab_upgrade">
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroller" style="height: 300px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                                        <ul class="feeds">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="col1">
+                                                        <div class="cont">
+                                                            <div class="cont-col1">
+                                                                <div class="label label-sm label-success">
+                                                                    <i class="fa fa-bell-o"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cont-col2">
+                                                                <div class="desc"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">升级</font></font></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                </div>
+                                <div class="tab-pane" id="tab_new_product">
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroller" style="height: 300px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                                        <ul class="feeds">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="col1">
+                                                        <div class="cont">
+                                                            <div class="cont-col1">
+                                                                <div class="label label-sm label-success">
+                                                                    <i class="fa fa-bell-o"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cont-col2">
+                                                                <div class="desc"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新产品</font></font></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                </div>
+                                <div class="tab-pane" id="tab_other">
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroller" style="height: 300px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                                        <ul class="feeds">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <div class="col1">
+                                                        <div class="cont">
+                                                            <div class="cont-col1">
+                                                                <div class="label label-sm label-success">
+                                                                    <i class="fa fa-bell-o"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cont-col2">
+                                                                <div class="desc"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">other</font></font></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                </div>
+                            </div>
+                            <!--END TABS-->
+                        </div>
+                    </div>
+                    <!-- END PORTLET-->
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!--   应用列表 -->
+    <div th:fragment="applicationList">
+        <div class="page-content" style="min-height: 1439px;">
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <a href="index.html">首页</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <a href="#">应用列表</a>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="page-title">
+                应用列表
+            </h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <div class="portlet light bordered">
+                        <div class="portlet-body">
+                            <div class="table-toolbar">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <button id="sample_editable_1_new" class="btn sbold green"> 创建应用
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="sample_1_wrapper" class="dataTables_wrapper no-footer">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="dataTables_length" id="sample_1_length">
+                                            <label>显示<select
+                                                    name="sample_1_length" aria-controls="sample_1"
+                                                    class="form-control input-sm input-xsmall input-inline">
+                                                <option value="5">5</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                                <option value="-1">All</option>
+                                            </select></label></div>
+                                    </div>
+
+                                </div>
+                                <div class="table-scrollable">
+                                    <table class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer"
+                                           id="sample_1" role="grid" aria-describedby="sample_1_info">
+                                        <thead>
+                                        <tr role="row">
+
+                                            <th class="sorting_asc" tabindex="0" aria-controls="sample_1"
+                                                rowspan="1" colspan="1" aria-sort="ascending"
+                                                aria-label=" Username : activate to sort column descending"
+                                                style="width: 200px;"> 应用名称
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1"
+                                                colspan="1" aria-label=" Email : activate to sort column ascending"
+                                                style="width: 150px;"> AppID
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1"
+                                                colspan="1" aria-label=" Status : activate to sort column ascending"
+                                                style="width: 200px;"> API Key
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1"
+                                                colspan="1" aria-label=" Joined : activate to sort column ascending"
+                                                style="width: 200px;"> Secret Key
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1"
+                                                colspan="1" aria-label=" Joined : activate to sort column ascending"
+                                                style="width: 150px;"> 创建时间
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1"
+                                                colspan="1"
+                                                aria-label=" Actions : activate to sort column ascending"
+                                                style="width: 150px;"> 操作
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="gradeX odd" role="row">
+
+                                            <td class="sorting_1"> coop</td>
+                                            <td>
+                                                <a href="mailto:userwow@gmail.com"> good@gmail.com </a>
+                                            </td>
+                                            <td>
+                                                <span class="label label-sm label-info"> Info </span>
+                                            </td>
+                                            <td class="center"> 12.12.2011</td>
+                                            <td class="center"> 12.12.2011</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-xs green dropdown-toggle" type="button"
+                                                            data-toggle="dropdown" aria-expanded="false"> 选项
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li>
+                                                            <a href="javascript:;">管理</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">删除</a>
+                                                        </li>
+
+
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-5">
+                                        <div class="dataTables_info" id="sample_1_info" role="status"
+                                             aria-live="polite">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7">
+                                        <div class="dataTables_paginate paging_bootstrap_full_number"
+                                             id="sample_1_paginate">
+                                            <ul class="pagination" style="visibility: visible;">
+                                                <li class="prev disabled"><a href="#" title="First"><i
+                                                        class="fa fa-angle-double-left"></i></a></li>
+                                                <li class="prev disabled"><a href="#" title="Prev"><i
+                                                        class="fa fa-angle-left"></i></a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li class="next"><a href="#" title="Next"><i
+                                                        class="fa fa-angle-right"></i></a></li>
+                                                <li class="next"><a href="#" title="Last"><i
+                                                        class="fa fa-angle-double-right"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  侧边栏  -->
+    <div th:fragment="sidebar">
+        <div class="page-sidebar navbar-collapse collapse">
+            <!-- 开始菜单栏 -->
+
+            <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                <!-- 开始侧边栏按钮 -->
+                <li class="sidebar-toggler-wrapper hide">
+                    <div class="sidebar-toggler">
+                        <span></span>
+                    </div>
+                </li>
+                <!-- 结束侧栏按钮 -->
+                <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+
+
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <i class="icon-diamond"></i>
+                        <span class="title">应用</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="/application/query/all" class="nav-link ">
+                                <span class="title">应用列表</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/order/account" class="nav-link nav-toggle">
+                        <i class="icon-wallet"></i>
+                        <span class="title">财务中心</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/message" class="nav-link nav-toggle">
+                        <i class="icon-docs"></i>
+                        <span class="title">消息中心</span>
+                    </a>
+                </li>
+
+
+            </ul>
+            <!-- 结束侧边栏菜单 -->
+            <!-- 结束侧边栏菜单 -->
+        </div>
+    </div>
+
+    <!--信息列表    -->
+    <div th:fragment="msgList">
+        <div class="col-sm-10 animated fadeInRight">
+            <div class="mail-box-header">
+
+                <form method="get" action="index.html" class="pull-right mail-search" style="display: none">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm" name="search" placeholder="搜索邮件标题，正文等">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                搜索
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <h2>
+                    未读消息 <span th:text="'('+${queryBean.getTotalRows()}+')'">(12)</span>
+                </h2>
+                <div class="mail-tools tooltip-demo m-t-md">
+                    <button onclick="location.reload()" id="refresh-btn" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="刷新列表"><i class="fa fa-refresh"></i> 刷新</button>
+                    <button onclick="read()" id="read-btn" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="标为已读"><i class="fa fa-eye"></i>
+                    </button>
+                    <button onclick="deleteMsg()" id="delete-btn" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="删除信息"><i class="fa fa-trash-o"></i>
+                    </button>
+
+                </div>
+            </div>
+            <div class="mail-box">
+                <table class="table table-hover table-mail">
+                    <tr class="unread">
+                        <td class="check-mail" >
+
+                        </td>
+                        <td class="mail-ontact"><a href="mail_detail.html">&nbsp&nbsp&nbsp&nbsp&nbsp主题</a>
+                        </td>
+                        <td class="mail-subject"><a href="mail_detail.html">&nbsp&nbsp&nbsp&nbsp&nbsp消息类别</a>
+                        </td>
+                        <td class=""></td>
+                        <td class="text-right mail-date">接收时间</td>
+                    </tr>
+                </table>
+                <h2 th:if="${#lists.isEmpty(queryBean.getItems())}" style="text-align:center;" >没有消息</h2>
+                <table class="table table-hover table-mail">
+                    <tbody th:each="msg, iterStat : ${queryBean.getItems()}">
+                    <tr class="unread" th:class="${msg.status}==2 ? 'read' : 'unread' ">
+                        <td class="check-mail" >
+                            <input th:value="${msg.id}" type="checkbox" name="msg" class="i-checks"  style="position: absolute; opacity: 0;">
+                        </td>
+                        <td class="mail-ontact"><a th:href="@{'/message/detail'(id=${msg.id}, category=${category}, status=${status}, page=${queryBean.currentPage})}" th:text="${msg.title}">支付宝</a>
+                        </td>
+                        <td class="mail-subject"><a th:href="@{'/message/detail'(id=${msg.id}, category=${category}, status=${status}, page=${queryBean.currentPage})}" th:text="${msgType[iterStat.index]}">支付宝提醒</a>
+                        </td>
+                        <td class=""></td>
+                        <td class="text-right mail-date" th:text="${#dates.format(msg.gmtCreate, 'yyyy/MM/dd  HH:mm')}">昨天 10:20</td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+            <div style="float: right">
+                <ul class="pagination">
+                    <li>
+                        <a  th:href="@{'/message?page=1'(category=${category}, status=${status})}" th:if="${queryBean.getCurrentPage()>1}"> << </a>
+                    </li>
+                    <li>
+                        <a  th:href="@{'/message'(page=${queryBean.getCurrentPage()-1}, category=${category}, status=${status})}" th:if="${queryBean.getCurrentPage()>1}"> < </a>
+                    </li>
+
+                    <li th:each="num : ${#numbers.sequence(queryBean.getStartLabel(), queryBean.getEndLabel())}" th:if="${queryBean.getEndLabel()>0}">
+                        <a th:style="${num==queryBean.getCurrentPage()} ? 'background-color:#09C;border: 1px solid #09C;' : ''" th:href="@{'/message'(page=${num}, category=${category}, status=${status})}" th:text="${num}"></a>
+                    </li>
+
+                    <li>
+                        <a  th:href="@{'/message'(page=${queryBean.getCurrentPage()+1}, category=${category}, status=${status})}" th:if="${queryBean.getCurrentPage()<queryBean.getTotalPage()}"> > </a>
+                    </li>
+                    <li>
+                        <a  th:href="@{'/message'(page=${queryBean.getTotalPage()}, category=${category}, status=${status})}" th:if="${queryBean.getCurrentPage()<queryBean.getTotalPage()}"> >> </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!--信息详细    -->
+    <div th:fragment="msgDetail">
+        <div class="col-sm-10 animated fadeInRight">
+            <div class="pull-left tooltip-demo">
+                <a th:href="@{'/message'(category=${category}, status=${status}, page=${page})}" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title=""><i class="fa fa-reply"></i> 返回上级</a>
+                <a th:href="@{'/message/detail'(id=${msgs[0].id}, category=${category}, status=${status}, page=${page})}" th:text="'上一条'+(${msgs[0].status==2} ? '(已读)' : '') " th:if="${#objects.nullSafe(msgs[0].id, false)}" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title=""><i class="fa fa-arrow-left"></i> 上一条</a>
+                <a th:href="@{'/message/detail'(id=${msgs[2].id}, category=${category}, status=${status}, page=${page})}" th:text="'下一条'+(${msgs[2].status==2} ? '(已读)' : '') " th:if="${#objects.nullSafe(msgs[2].id, false)}" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title=""><i class="fa fa-arrow-right"></i> 下一条</a>
+            </div>
+            <div class="mail-box-header">
+                <div class="mail-tools tooltip-demo m-t-md">
+                    <h3 style="text-align:center;">
+                        <span th:text="${msgs[1].title}"></span>
+                    </h3>
+                    <h5>
+                        <span th:text="${#dates.format(msgs[1].gmtCreate, 'yyyy-MM-dd  hh:mm')}" class="pull-right font-noraml">2014年10月28日(星期二) 晚上8:20</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="mail-box">
+                <div class="mail-body">
+                    <pre th:text="${msgs[1].body}"></pre>
+                </div>
+                <div class="clearfix"></div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--财务总览   -->
+    <div th:fragment="financeIndex">
+        <div class="billing-main-wrap main-wrap-new account-index">
+            <div class="detail-content">
+                <h2>财务总览</h2>
+                <section class="account-balance">
+                    <div class="section-header"><h4>账户信息</h4></div>
+                    <div class="col-l-list">
+
+                        <div class="form-row">
+                            <label>现金余额：</label>
+                            <div class="form-value">
+                                <span class="cash-balance" th:text="${money}">￥0.00</span>
+                                <a onclick="$('#pay_page').modal()" class="link-btn ui-ctrl ui-link skin-primary skin-primary-link" id="ctrl-a-recharge">充值</a>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label>可用代金券：</label>
+                            <div class="form-value coupon-value">
+                                <a href="/order/voucher" class="coupon-count ui-ctrl ui-link" id="ctrl-a-couponLink" th:text="${voucherCount}">0</a>张
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="account-panel">
+                    <div class="section-header"><h4>消费信息</h4></div>
+                    <div class="item">
+                        <div class="bg day"></div>
+                        <div class="info">
+                            <p class="day-consumption" th:text="${todayPast}">￥0.00</p>
+                            <span>今日消费金额</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="bg month"></div>
+                        <div class="info">
+                            <a  href="" class="month-consumption" th:text="${currentMonthPast}">￥0.00</a>
+                            <span>本月消费金额</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="account-panel">
+                    <div class="section-header"><h4>待办事项</h4></div>
+                    <div class="item">
+                        <div class="bg order"></div>
+                        <div class="info">
+                            <a href="" th:text="${payNum}">0</a>
+                            <span>待支付订单</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="bg renew"></div>
+                        <div class="info">
+                            <a href="">0</a>
+                            <span>待续费实例</span>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="bg invoice"></div>
+                        <div class="info">
+                            <a class="uninvoiced-amount ui-ctrl ui-link" id="ctrl-a-applyInvoice" href="" style="display: none;">￥--</a>
+                            <p class="uninvoiced-amount-show" th:text="${invoice}">￥0.00</p>
+                            <span>待开票金额</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <div id="pay_page" class="modal fade in" tabindex="-1" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width: 500px; height: 250px">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">充值选项</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100px;"><div class="scroller" style="height: 100px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                            <div class="row">
+                                <div class="col-lg-12" style="margin-left: 20px; ">
+                                    <h4>请选择充值金额</h4>
+                                    <p style="margin-top: 30px;  margin-right: 50px">
+                                    <div>
+                                        <label><input name="pay_money" type="radio" value="10">10元 </label>
+                                        <label style="margin-left: 10px"><input name="pay_money" type="radio" value="20">20元 </label>
+                                        <label style="margin-left: 10px"><input name="pay_money" type="radio" value="50">50元 </label>
+                                        <label style="margin-left: 10px"><input name="pay_money" type="radio" value="100">100元 </label>
+                                        <label style="margin-left: 10px"><input name="pay_money" type="radio" value="1000">1000元 </label>
+                                    </div>
+                                    </p>
+                                    <p></p>
+                                </div>
+
+                            </div>
+                        </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn green" style="width: 100px;height: 40px" onclick="goPay()">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--代金劵    -->
+    <div th:fragment="voucher" >
+        <div class="list-page-body">
+            <div class="list-page-title">
+                <h2>已激活代金券<span th:text="${voucherCount}"></span></h2><!--8-->
+            </div><!--7-->
+            <div class="list-page-content">
+
+                <div class="list-page-toolbar">
+                    <div class="list-page-tb-left">
+                        <!--25-->
+                        <div class="list-page-tb-left-toolbar">
+                            <x-toolbar>
+                                <ui-ghost><!--30-->
+                                    <div aria-label="" data-track-id="" data-track-name=""
+                                         class="ui-button ui-button-x skin-primary skin-primary-button ui-button-with-label">
+                                        <div class="con-btn">
+                                            <span class="ui-button-label" onclick="$('#voucherFrame').modal()">激活代金券</span>
+                                            <!--35-->
+                                        </div><!--33-->
+                                    </div><!--31-->
+                                </ui-ghost><!--28-->
+                            </x-toolbar>
+                            <div class="ui-bulk-actions">
+                                <!--41-->
+                            </div>
+                        </div><!--26--><!--25-->
+                        <!--42-->
+                        <div class="list-page-tb-left-filter">
+                            <div class="ui-biz-filter ui-biz-filter-x">
+                                <dl>
+                                    <!--46-->
+                                    <dd>
+                                        <div class="ui-biz-filter-form ui-biz-filter-form-inline">
+
+                                            <div class="ui-biz-filter-form-item">
+                                                <!--70-->
+                                                <div class="btn-group" >
+                                                    <button style="background-color: #108cee;" class="btn btn-default">
+                                                        <div th:switch="${result.status}">
+                                                            <p style="color: #fdfdfd;" th:case="0">状态(全部)</p>
+                                                            <p style="color: #fdfdfd;" th:case="1">状态(待使用)</p>
+                                                            <p style="color: #fdfdfd;" th:case="2">状态(已使用)</p>
+                                                            <p style="color: #fdfdfd;" th:case="3">状态(已过期)</p>
+                                                        </div>
+                                                    </button>
+                                                    <button style="background-color: #108cee;" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                        <span class="caret" style="color: #fdfdfd;"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="/order/voucher?status=0">全部</a>
+                                                        </li>
+                                                        <li class="divider"></li>
+                                                        <li>
+                                                            <a href="/order/voucher?status=1">待使用</a>
+                                                        </li>
+                                                        <li class="divider"></li>
+                                                        <li>
+                                                            <a href="/order/voucher?status=2">已使用</a>
+                                                        </li>
+                                                        <li class="divider"></li>
+                                                        <li>
+                                                            <a href="/order/voucher?status=3">已过期</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div><!--47-->
+                                        </div>
+                                        <!--81-->
+                                    </dd>
+                                </dl><!--45-->
+                            </div>
+                        </div><!--43--><!--42-->
+                    </div>
+                    <div class="list-page-tb-right">
+                        <!--82-->
+                        <div>
+                            <x-right-toolbar>
+
+                            </x-right-toolbar>
+                        </div><!--82-->
+                    </div>
+                </div>
+
+                <x-main>
+                    <div data-track-id="" data-track-name="" class="ui-table ui-table-x">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <thead class="ui-table-head">
+                                <tr>
+                                    <th class="ui-table-hcell" style="width: 23%;">
+                                        <div class="ui-table-hcell-text">
+                                            <div class="ui-table-hcell-text-content">代金券号</div><!--99-->
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 15%;">
+                                        <div class="ui-table-hcell-text">
+
+                                            <div class="ui-table-hcell-text-content">状态</div><!--102-->
+
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 15%;">
+                                        <div class="ui-table-hcell-text">
+
+                                            <div class="ui-table-hcell-text-content">金额/折扣</div>
+
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 15%;">
+                                        <div class="ui-table-hcell-text">
+                                            <!--122-->
+                                            <div class="ui-table-hcell-text-content">适用场景</div>
+
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 15%;">
+                                        <div class="ui-table-hcell-text">
+
+                                            <div class="ui-table-hcell-text-content">开始时间</div>
+
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 17%;">
+                                        <div class="ui-table-hcell-text">
+                                            <div class="ui-table-hcell-text-content">结束时间</div>
+                                        </div>
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody th:if="${#lists.isEmpty(result.getItems())}" class="ui-table-body">
+                                <tr>
+                                    <td class="ui-table-empty" colspan="11">
+                                        <div>暂无数据</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody class="ui-table-body" th:each="item : ${result.items}">
+                                <tr class="ui-table-row ui-table-row-even">
+                                    <td class="ui-table-cell">
+                                        <div class="ui-table-cell-text" th:text="${item.id}"></div>
+                                    </td>
+                                    <td class="ui-table-cell">
+                                        <div class="ui-table-cell-text" th:switch="${item.status}">
+                                            <p th:case="1">待使用</p>
+                                            <p th:case="2">已使用</p>
+                                            <p th:case="3">已过期</p>
+                                        </div>
+                                    </td>
+                                    <td class="ui-table-cell">
+                                        <div class="ui-table-cell-text" th:text="${item.money}"></div>
+                                    </td>
+                                    <td class="ui-table-cell">
+                                        <div class="ui-table-cell-text" th:switch="${item.payType}">
+                                            <p th:case="0">所有</p>
+                                            <p th:case="1">购买</p>
+                                            <p th:case="2">续费</p>
+                                        </div>
+                                    </td>
+                                    <td class="ui-table-cell">
+                                        <div class="ui-table-cell-text" th:text="${#dates.format(item.startTime, 'yyyy/MM/dd HH:mm') }"></div>
+                                    </td>
+                                    <td class="ui-table-cell">
+                                        <div class="ui-table-cell-text" th:text="${#dates.format(item.endTime, 'yyyy/MM/dd HH:mm')}"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </x-main>
+                <div style="float: right">
+                    <ul class="pagination">
+                        <li>
+                            <a  th:href="@{'/order/voucher?page=1'(status=${result.status})}" th:if="${result.getCurrentPage()>1}"> << </a>
+                        </li>
+                        <li>
+                            <a  th:href="@{'/order/voucher'(page=${result.getCurrentPage()-1}, status=${result.status})}" th:if="${result.getCurrentPage()>1}"> < </a>
+                        </li>
+
+                        <li th:each="num : ${#numbers.sequence(result.getStartLabel(), result.getEndLabel())}" th:if="${result.getEndLabel()>0}">
+                            <a th:style="${num==result.getCurrentPage()} ? 'background-color:#09C;border: 1px solid #09C;' : ''" th:href="@{'/order/voucher'(page=${num}, status=${result.status})}" th:text="${num}"></a>
+                        </li>
+
+                        <li>
+                            <a  th:href="@{'/order/voucher'(page=${result.getCurrentPage()+1}, status=${result.status})}" th:if="${result.getCurrentPage()<result.getTotalPage()}"> > </a>
+                        </li>
+                        <li>
+                            <a  th:href="@{'/order/voucher'(page=${result.getTotalPage()}, status=${result.status})}" th:if="${result.getCurrentPage()<result.getTotalPage()}"> >> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--订单 -->
+    <div th:fragment="order">
+        <div class="billing-main-wrap main-wrap-new order-list">
+            <div class="list-content">
+
+                <div class="tab-wrap">
+                    <h2>订单管理</h2>
+                </div>
+
+                <div class="table-wrap table-full-wrap">
+                    <div class="ui-row">
+                        <div class="btn-group" >
+                            <button style="background-color: #108cee;" class="btn btn-default">
+                                <div th:switch="${result.status}">
+                                    <p style="color: #fdfdfd;" th:case="0">状态(全部)</p>
+                                    <p style="color: #fdfdfd;" th:case="1">状态(已支付)</p>
+                                    <p style="color: #fdfdfd;" th:case="2">状态(待支付)</p>
+                                    <p style="color: #fdfdfd;" th:case="3">状态(未支付)</p>
+                                </div>
+                            </button>
+                            <button style="background-color: #108cee;" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/order/list">全部</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/order/list?status=1">已支付</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/order/list?status=2">待支付</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/order/list?status=3">未支付</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="ui-ctrl ui-table ui-table-filter" style="width: 100%;">
+                        <div id="ctrl-a-table-head" class="ui-table-head" style="width: 100%;">
+                            <div id="ctrl-a-table-head-panel" class="ui-ctrl ui-panel">
+                                <table cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                    <tr>
+                                        <th id="ctrl-a-table-title-cell0"
+                                            class="ui-table-hcell"  style="width:14%;">
+                                            <div class="ui-table-hcell-text ui-table-hcell-text-first">
+                                                订单号
+                                            </div>
+                                        </th>
+                                        <th id="ctrl-a-table-title-cell1" class="ui-table-hcell" style="width:14%;">
+                                            <div class="ui-table-hcell-text">产品名称</div>
+                                        </th>
+                                        <th id="ctrl-a-table-title-cell2" class="ui-table-hcell hcell-filter" style="width:14%;">
+                                            <div class="ui-table-hcell-text">状态
+                                                <div class="ui-table-filter-panel" >
+                                                    <label class="ui-table-filter-head iconfont icon-downarrow"></label>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th id="ctrl-a-table-title-cell3" class="ui-table-hcell" style="width:14%;">
+                                            <div class="ui-table-hcell-text">订单金额(元)</div>
+                                        </th>
+                                        <th id="ctrl-a-table-title-cell5" class="ui-table-hcell" style="width:14%;">
+                                            <div class="ui-table-hcell-text">配置</div>
+                                        </th>
+                                        <th id="ctrl-a-table-title-cell6" class="ui-table-hcell" style="width:14%;">
+                                            <div class="ui-table-hcell-text">下单时间</div>
+                                        </th>
+                                        <th id="ctrl-a-table-title-cell7" class="ui-table-hcell"style="width:14%;">
+                                            <div class="ui-table-hcell-text ui-table-hcell-text-last">操作
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </tbody>
+                                    <tbody class="ui-table-body">
+                                    <tr class="ui-table-row ui-table-row-even" th:each="item,iterStat : ${result.getItems()}">
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${item.id}">
+                                                订单号
+                                            </div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${productNames[iterStat.index]}">
+                                                产品名称
+                                            </div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:switch="${item.status}">
+                                                <p th:case="1">已支付</p>
+                                                <p th:case="2">待支付</p>
+                                                <p th:case="3">未支付</p>
+                                            </div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${item.money}+' 元'">
+                                                订单金额
+                                            </div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${item.orderType}+'次数'">
+                                                配置
+                                            </div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${#dates.format(item.orderTime, 'yyyy/MM/dd HH:mm')}">
+                                                下单时间
+                                            </div>
+                                        </td>
+                                        <td class="ui-table-cell" th:if="${item.status==2}">
+                                            <div class="ui-table-cell-text">
+                                                <a>支付</a>
+                                                <a th:href="@{'/order/cancel'(page=${result.getCurrentPage()}, status=${result.status}, orderId=${item.id})}" style="margin-left: 20px">取消</a>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div th:if="${#lists.isEmpty(result.getItems())}" id="ctrl-a-table-body" class="ui-table-body"
+                             style="overflow: auto; width: 100%; height: auto;">
+                            <div  class="ui-ctrl ui-panel">
+                                <div class="ui-table-body-nodata">
+                                    <div><p>无可相关数据</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float: right">
+                            <ul class="pagination">
+                                <li>
+                                    <a  th:href="@{'/order/list?page=1'(status=${result.status})}" th:if="${result.getCurrentPage()>1}"> << </a>
+                                </li>
+                                <li>
+                                    <a  th:href="@{'/order/list'(page=${result.getCurrentPage()-1}, status=${result.status})}" th:if="${result.getCurrentPage()>1}"> < </a>
+                                </li>
+
+                                <li th:each="num : ${#numbers.sequence(result.getStartLabel(), result.getEndLabel())}" th:if="${result.getEndLabel()>0}">
+                                    <a th:style="${num==result.getCurrentPage()} ? 'background-color:#09C;border: 1px solid #09C;' : ''" th:href="@{'/order/list'(page=${num}, status=${result.status})}" th:text="${num}"></a>
+                                </li>
+
+                                <li>
+                                    <a  th:href="@{'/order/list'(page=${result.getCurrentPage()+1}, status=${result.status})}" th:if="${result.getCurrentPage()<result.getTotalPage()}"> > </a>
+                                </li>
+                                <li>
+                                    <a  th:href="@{'/order/list'(page=${result.getTotalPage()}, status=${result.status})}" th:if="${result.getCurrentPage()<result.getTotalPage()}"> >> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--充值记录  -->
+    <div th:fragment="payRecord">
+        <div class="billing-main-wrap main-wrap-new order-list">
+            <div class="list-content">
+
+                <div class="tab-wrap">
+                    <h2>充值记录</h2>
+                </div>
+
+                <div class="table-wrap table-full-wrap">
+                    <div class="ui-row">
+                    </div>
+                    <div class="ui-ctrl ui-table ui-table-filter" style="width: 100%;">
+                        <div id="ctrl-a-table-head" class="ui-table-head" style="width: 100%;">
+                            <div id="ctrl-a-table-head-panel" class="ui-ctrl ui-panel">
+                                <table cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                    <tr>
+                                        <th id="ctrl-a-table-title-cell0"
+                                            class="ui-table-hcell"  style="width:14%;">
+                                            <div class="ui-table-hcell-text ui-table-hcell-text-first">
+                                                订单号
+                                            </div>
+                                        </th>
+                                        <th id="ctrl-a-table-title-cell1" class="ui-table-hcell" style="width:14%;">
+                                            <div class="ui-table-hcell-text">支付方式</div>
+                                        </th>
+                                        <th id="ctrl-a-table-title-cell3" class="ui-table-hcell" style="width:14%;">
+                                            <div class="ui-table-hcell-text">充值余额</div>
+                                        </th>
+
+                                        <th id="ctrl-a-table-title-cell6" class="ui-table-hcell" style="width:14%;">
+                                            <div class="ui-table-hcell-text">支付时间</div>
+                                        </th>
+                                    </tr>
+                                    </tbody>
+                                    <tbody class="ui-table-body">
+                                    <tr class="ui-table-row ui-table-row-even" th:each="item,iterStat : ${result.getItems()}">
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${item.id}">
+                                                订单号
+                                            </div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:switch="${item.payType}">
+                                                <p th:case="1">支付宝</p>
+                                            </div>
+                                        </td>
+
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${item.money}+' 元'">
+                                                充值金额
+                                            </div>
+                                        </td>
+
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${#dates.format(item.gmtCreate, 'yyyy/MM/dd HH:mm')}">
+                                                支付时间
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div th:if="${#lists.isEmpty(result.getItems())}" id="ctrl-a-table-body" class="ui-table-body"
+                             style="overflow: auto; width: 100%; height: auto;">
+                            <div  class="ui-ctrl ui-panel">
+                                <div class="ui-table-body-nodata">
+                                    <div><p>无可相关数据</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float: right">
+                            <ul class="pagination">
+                                <li>
+                                    <a  th:href="@{'/order/payRecord?page=1'}" th:if="${result.getCurrentPage()>1}"> << </a>
+                                </li>
+                                <li>
+                                    <a  th:href="@{'/order/payRecord'(page=${result.getCurrentPage()-1})}" th:if="${result.getCurrentPage()>1}"> < </a>
+                                </li>
+
+                                <li th:each="num : ${#numbers.sequence(result.getStartLabel(), result.getEndLabel())}" th:if="${result.getEndLabel()>0}">
+                                    <a th:style="${num==result.getCurrentPage()} ? 'background-color:#09C;border: 1px solid #09C;' : ''" th:href="@{'/order/payRecord'(page=${num})}" th:text="${num}"></a>
+                                </li>
+
+                                <li>
+                                    <a  th:href="@{'/order/payRecord'(page=${result.getCurrentPage()+1})}" th:if="${result.getCurrentPage()<result.getTotalPage()}"> > </a>
+                                </li>
+                                <li>
+                                    <a  th:href="@{'/order/payRecord'(page=${result.getTotalPage()})}" th:if="${result.getCurrentPage()<result.getTotalPage()}"> >> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--发票    -->
+    <div th:fragment="invoice">
+        <div class="tabbable" id="tabs-476610">
+            <ul class="nav nav-tabs">
+                <li th:class="${!adsPage} ? 'active' : ''" >
+                    <a href="#panel-909430" data-toggle="tab">发票列表</a>
+                </li>
+                <li th:class="${adsPage} ? 'active' : ''">
+                    <a href="#panel-684156" data-toggle="tab">寄送地址</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div  th:class="${!adsPage}? 'tab-pane active' : 'tab-pane'" class="tab-pane active" id="panel-909430">
+                    <div class="list-page-body">
+                        <div class="item" style="width: 200px; height: 50px">
+                            <p class="total-invoiced-amount">
+                                <span>可开票总金额</span>
+                                <input id="invoiceVal" type="text" th:value="${data.invoiceVal}" style="display: none">
+                                <em style="font-size: 20px;color: #F38900;margin-right: 7px;" th:text="'￥'+${data.invoiceVal}"></em>元
+                            </p>
+                        </div>
+                        <div class="list-page-content">
+
+                            <div class="list-page-toolbar">
+                                <div class="list-page-tb-left">
+                                    <!--25-->
+                                    <div class="list-page-tb-left-toolbar">
+                                        <x-toolbar>
+                                            <ui-ghost><!--30-->
+                                                <div class="ui-button ui-button-x skin-primary skin-primary-button ui-button-with-label">
+                                                    <div class="con-btn">
+                                                        <span class="ui-button-label" onclick="$('#openInvoice').modal()">申请发票</span>
+                                                    </div><!--33-->
+                                                </div><!--31-->
+                                                <!--30--></ui-ghost><!--28-->
+                                        </x-toolbar>
+                                        <div class="ui-bulk-actions">
+                                            <!--41-->
+                                        </div>
+                                    </div><!--26--><!--25-->
+                                    <!--42-->
+                                    <div class="list-page-tb-left-filter">
+                                        <div class="ui-biz-filter ui-biz-filter-x">
+                                            <dl>
+                                                <!--46-->
+                                                <dd>
+                                                    <div class="ui-biz-filter-form ui-biz-filter-form-inline">
+
+                                                        <div class="ui-biz-filter-form-item">
+                                                            <!--70-->
+                                                            <div class="btn-group" >
+                                                                <button style="background-color: #108cee;" class="btn btn-default">
+                                                                    <div th:switch="${data.result.status}">
+                                                                        <p style="color: #fdfdfd;" th:case="0">状态(全部)</p>
+                                                                        <p style="color: #fdfdfd;" th:case="1">状态(已申请)</p>
+                                                                        <p style="color: #fdfdfd;" th:case="2">状态(待发送)</p>
+                                                                        <p style="color: #fdfdfd;" th:case="3">状态(成功)</p>
+                                                                        <p style="color: #fdfdfd;" th:case="4">状态(失败)</p>
+                                                                    </div>
+                                                                </button>
+                                                                <button style="background-color: #108cee;" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                                    <span class="caret" style="color: #fdfdfd;"></span>
+                                                                </button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>
+                                                                        <a href="/wallet/invoice?status=0">全部</a>
+                                                                    </li>
+                                                                    <li class="divider"></li>
+                                                                    <li>
+                                                                        <a href="/wallet/invoice?status=1">已申请</a>
+                                                                    </li>
+                                                                    <li class="divider"></li>
+                                                                    <li>
+                                                                        <a href="/wallet/invoice?status=2">待发送</a>
+                                                                    </li>
+                                                                    <li class="divider"></li>
+                                                                    <li>
+                                                                        <a href="/wallet/invoice?status=3">成功</a>
+                                                                    </li>
+                                                                    <li class="divider"></li>
+                                                                    <li>
+                                                                        <a href="/wallet/invoice?status=4">失败</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div><!--47-->
+                                                    </div>
+                                                    <!--81-->
+                                                </dd>
+                                            </dl><!--45-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-page-tb-right">
+                                    <!--82-->
+                                    <div>
+                                        <x-right-toolbar>
+                                        </x-right-toolbar>
+                                    </div><!--82-->
+                                </div>
+                            </div><!--24-->
+                            <!--89-->
+
+
+                            <x-main>
+                                <div  class="ui-table ui-table-x">
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <thead class="ui-table-head">
+                                        <tr>
+                                            <th class="ui-table-hcell" style="width: 23%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <!--98-->
+                                                    <div class="ui-table-hcell-text-content">申请开票时间</div><!--99-->
+                                                    <!--100-->
+                                                    <!--98-->
+                                                </div>
+                                            </th>
+                                            <th class="ui-table-hcell" style="width: 15%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <div class="ui-table-hcell-text-content">发票抬头</div><!--102-->
+                                                </div>
+                                            </th>
+                                            <th class="ui-table-hcell" style="width: 15%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <div class="ui-table-hcell-text-content">发票类型</div>
+
+                                                </div>
+                                            </th>
+                                            <th class="ui-table-hcell" style="width: 15%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <!--122-->
+                                                    <div class="ui-table-hcell-text-content">发票金额</div>
+                                                </div>
+                                            </th>
+                                            <th class="ui-table-hcell" style="width: 15%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <div class="ui-table-hcell-text-content">状态</div>
+                                                </div>
+                                            </th>
+                                            <th class="ui-table-hcell" style="width: 17%;">
+                                                <div class="ui-table-hcell-text">
+
+                                                    <div class="ui-table-hcell-text-content">操作</div>
+
+                                                </div>
+                                            </th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody th:if="${#lists.isEmpty(data.result.getItems())}" class="ui-table-body">
+                                        <tr>
+                                            <td class="ui-table-empty" colspan="11">
+                                                <div>暂无数据</div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody class="ui-table-body">
+                                        <tr class="ui-table-row ui-table-row-even" th:each="item : ${data.result.getItems()}">
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text" th:text="${#dates.format(item.gmtModified, 'yyyy/MM/dd HH:mm')}">
+                                                    申请开票时间
+                                                </div>
+                                            </td>
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text" th:switch="${item.invoiceTitle}" >
+                                                    <p th:case="'1'">个人</p>
+                                                </div>
+                                            </td>
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text">个人增值税普通发票</div>
+                                            </td>
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text" th:text="${item.money}">发票金额</div>
+                                            </td>
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text" th:switch="${item.status}">
+                                                    <p th:case="1">已申请</p>
+                                                    <p th:case="2">待发送</p>
+                                                    <p th:case="3">成功</p>
+                                                    <p th:case="4">失败</p>
+                                                </div>
+                                            </td>
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text">
+                                                    <a th:href="@{'/wallet/invoice/cancel'(page=${data.result.currentPage}, status=${data.result.status}, id=${item.id}) }" th:if="${item.status==1}">取消</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--133-->
+                                </div><!--91-->
+                            </x-main>
+
+                            <div style="float: right">
+                                <ul class="pagination">
+                                    <li>
+                                        <a  th:href="@{'/wallet/invoice?page=1'(status=${data.result.status})}" th:if="${data.result.getCurrentPage()>1}"> << </a>
+                                    </li>
+                                    <li>
+                                        <a  th:href="@{'/wallet/invoice'(page=${data.result.getCurrentPage()-1}, status=${data.result.status})}" th:if="${data.result.getCurrentPage()>1}"> < </a>
+                                    </li>
+
+                                    <li th:each="num : ${#numbers.sequence(data.result.getStartLabel(), data.result.getEndLabel())}" th:if="${data.result.getEndLabel()>0}">
+                                        <a th:style="${num==data.result.getCurrentPage()} ? 'background-color:#09C;border: 1px solid #09C;' : ''" th:href="@{'/wallet/invoice'(page=${num}, status=${data.result.status})}" th:text="${num}"></a>
+                                    </li>
+
+                                    <li>
+                                        <a  th:href="@{'/wallet/invoice'(page=${data.result.getCurrentPage()+1}, status=${data.result.status})}" th:if="${data.result.getCurrentPage()<data.result.getTotalPage()}"> > </a>
+                                    </li>
+                                    <li>
+                                        <a  th:href="@{'/wallet/invoice'(page=${data.result.getTotalPage()}, status=${data.result.status})}" th:if="${data.result.getCurrentPage()<data.result.getTotalPage()}"> >> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div th:class="${adsPage}? 'tab-pane active' : 'tab-pane'" class="tab-pane" id="panel-684156">
+                    <div class="list-page-body">
+                        <div class="list-page-content">
+                            <input id="ads-size" type="text" th:value="${#lists.size(data.addresses)}"style="display: none">
+                            <div style="display: inline-block;height: 30px; line-height: 30px;margin-bottom: 20px;padding: 0 15px;background-color: #fcf7f1;color: #F38900;">
+                                已保存了<span   th:text="${#lists.size(data.addresses)}"></span>条地址，还能保存<span th:text="${10-#lists.size(data.addresses)}"></span>条地址
+                            </div>
+                            <div class="list-page-toolbar">
+                                <div class="list-page-tb-left">
+                                    <!--25-->
+                                    <div class="list-page-tb-left-toolbar">
+                                        <x-toolbar>
+                                            <ui-ghost><!--30-->
+                                                <div class="ui-button ui-button-x skin-primary skin-primary-button ui-button-with-label">
+                                                    <div class="con-btn">
+                                                        <span class="ui-button-label" onclick="$('#address').modal()">添加地址</span>
+                                                    </div><!--33-->
+                                                </div><!--31-->
+                                                <!--30--></ui-ghost><!--28-->
+                                        </x-toolbar>
+                                        <div class="ui-bulk-actions">
+                                            <!--41-->
+                                        </div>
+                                    </div><!--26--><!--25-->
+                                    <!--42-->
+
+                                </div>
+                                <div class="list-page-tb-right">
+                                    <!--82-->
+                                    <div>
+                                        <x-right-toolbar>
+                                        </x-right-toolbar>
+                                    </div><!--82-->
+                                </div>
+                            </div><!--24-->
+                            <!--89-->
+
+
+                            <x-main>
+                                <input type="text" value="flag1" id="addrFlag" style="display: none">
+                                <div  class="ui-table ui-table-x">
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <thead class="ui-table-head">
+                                        <tr>
+                                            <th class="ui-table-hcell" style="width: 25%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <!--98-->
+                                                    <div class="ui-table-hcell-text-content">收件人</div><!--99-->
+                                                    <!--100-->
+                                                    <!--98-->
+                                                </div>
+                                            </th>
+                                            <th class="ui-table-hcell" style="width: 25%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <div class="ui-table-hcell-text-content">联系方式</div><!--102-->
+                                                </div>
+                                            </th>
+                                            <th class="ui-table-hcell" style="width: 25%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <div class="ui-table-hcell-text-content">收货地址</div>
+
+                                                </div>
+                                            </th>
+                                            <th class="ui-table-hcell" style="width: 25%;">
+                                                <div class="ui-table-hcell-text">
+                                                    <!--122-->
+                                                    <div class="ui-table-hcell-text-content">操作</div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody th:if="${#lists.isEmpty(data.addresses)}" class="ui-table-body">
+                                        <tr>
+                                            <td class="ui-table-empty" colspan="11">
+                                                <div>暂无数据</div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody class="ui-table-body">
+                                        <tr class="ui-table-row ui-table-row-even" th:each="item : ${data.addresses}">
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text" th:text="${item.relationName}">
+                                                    收件人
+                                                </div>
+                                            </td>
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text" th:text="${item.mobile}">联系方式</div>
+                                            </td>
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text" th:text="${item.detailZone}">收获地址</div>
+                                            </td>
+                                            <td class="ui-table-cell">
+                                                <div class="ui-table-cell-text">
+                                                    <a th:href="@{'/wallet/address/default'(page=${data.result.currentPage},status=${data.result.status},id=${item.id})}" th:if="${item.isDefault==0}">设为默认</a>
+                                                    <span style="color: #0c203a" th:if="${item.isDefault==1}">默认</span>
+                                                    <a style="margin-left: 15px" th:onclick="'modifyAddress1('+${item.id}+')'">修改</a>
+                                                    <a th:href="@{'/wallet/address/delete'(page=${data.result.currentPage},status=${data.result.status},id=${item.id})}" style="margin-left: 15px">删除</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--133-->
+                                </div><!--91-->
+                            </x-main>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--发票申请   -->
+    <div th:fragment="applyInvoice">
+        <div>
+            <br>
+            <h3>发票抬头</h3>
+            <div class="list-page-body">
+                <div class="list-page-content">
+                    <x-main>
+                        <div class="ui-table ui-table-x">
+                            <table cellpadding="0" cellspacing="0" width="100%">
+                                <thead class="ui-table-head">
+                                <tr>
+                                    <th class="ui-table-hcell" style="width: 23%;">
+                                        <div class="ui-table-hcell-text">
+                                            <!--98-->
+                                            <div class="ui-table-hcell-text-content">发票抬头</div><!--99-->
+                                            <!--100-->
+                                            <!--98-->
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 15%;">
+                                        <div class="ui-table-hcell-text">
+                                            <div class="ui-table-hcell-text-content">发票类型</div><!--102-->
+                                        </div>
+                                    </th>
+                                </tr>
+                                </thead>
+
+                                <tbody class="ui-table-body">
+                                <tr class="ui-table-row ui-table-row-even">
+                                    <td class="ui-table-cell">
+                                        <div class="ui-table-cell-text">
+                                            <input checked value="1" name="invoiceType" type="radio">
+                                            <span style="margin-left: 10px">个人</span>
+                                        </div>
+                                    </td>
+                                    <td class="ui-table-cell">
+                                        <div class="ui-table-cell-text">个人增值税普通发票</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!--133-->
+                        </div><!--91-->
+                    </x-main>
+
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <h5>请选择邮寄地址</h5>
+            <input type="text" id="ads-size" style="display: none" th:value="${#lists.size(addresses)}">
+            <input type="text" value="flag2" id="addrFlag" style="display: none">
+            <div class="list-page-body">
+                <div class="list-page-content">
+                    <x-main>
+                        <div class="ui-table ui-table-x">
+                            <table cellpadding="0" cellspacing="0" width="100%">
+                                <thead class="ui-table-head">
+                                <tr>
+                                    <th class="ui-table-hcell" style="width: 25%;">
+                                        <div class="ui-table-hcell-text">
+                                            <!--98-->
+                                            <div class="ui-table-hcell-text-content">收件人</div><!--99-->
+                                            <!--100-->
+                                            <!--98-->
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 25%;">
+                                        <div class="ui-table-hcell-text">
+                                            <div class="ui-table-hcell-text-content">联系方式</div><!--102-->
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 25%;">
+                                        <div class="ui-table-hcell-text">
+                                            <div class="ui-table-hcell-text-content">收货地址</div>
+
+                                        </div>
+                                    </th>
+                                    <th class="ui-table-hcell" style="width: 25%;">
+                                        <div class="ui-table-hcell-text">
+                                            <!--122-->
+                                            <div class="ui-table-hcell-text-content">操作</div>
+                                        </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody th:if="${#lists.isEmpty(addresses)}" class="ui-table-body">
+                                <tr>
+                                    <td class="ui-table-empty" colspan="11">
+                                        <div>暂无数据<a onclick="$('#address').modal()">添加地址</a></div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tbody class="ui-table-body" th:each="addr : ${addresses}">
+                                    <tr class="ui-table-row ui-table-row-even">
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text">
+                                                <input th:value="${addr.id}" type="radio" name="adsFlag" th:checked="${addr.isDefault==1}">
+                                                <span style="margin-left: 10px" th:text="${addr.relationName}">收件人</span>
+                                            </div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${addr.mobile}">联系方式</div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text" th:text="${addr.detailZone}">收获地址</div>
+                                        </td>
+                                        <td class="ui-table-cell">
+                                            <div class="ui-table-cell-text">
+                                                <a href="/wallet/address">详情</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a onclick="$('#address').modal()">添加地址</a>
+                            <!--133-->
+                        </div><!--91-->
+                    </x-main>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.tyrelocation.repository.InvoiceMapper">
+  <resultMap id="BaseResultMap" type="com.test.tyrelocation.entity.Invoice">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="invoice_title" jdbcType="VARCHAR" property="invoiceTitle" />
+    <result column="invoice_type" jdbcType="INTEGER" property="invoiceType" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="address_id" jdbcType="BIGINT" property="addressId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, invoice_title, invoice_type, user_id, money, note, address_id, status, gmt_create,
+    gmt_modified
+  </sql>
+  <sql id="My_Column_List">
+    id, invoice_title, invoice_type, money,  status, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from invoice
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from invoice
+    where user_id = #{userId,jdbcType=BIGINT}
+    and status!=4
+  </select>
+  <select id="selectCountByUserIdAndStatus" parameterType="java.lang.Long" resultType="java.lang.Integer">
+    select
+    count(*)
+    from invoice
+    where user_id = #{userId,jdbcType=BIGINT}
+    <if test="status!=0">
+      and status = #{status}
+    </if>
+  </select>
+  <select id="selectByUserIdAndStatus"  resultMap="BaseResultMap">
+    select
+    <include refid="My_Column_List"></include>
+    from invoice
+    where user_id = #{userId,jdbcType=BIGINT}
+    <if test="bean.status!=0">
+      and status = #{bean.status}
+    </if>
+    limit #{bean.startRow}, #{bean.pageSize}
+  </select>
+  <select id="selectByPrimaryKeyAndUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from invoice
+    where id = #{id,jdbcType=BIGINT}
+    and user_id = #{userId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from invoice
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.test.tyrelocation.entity.Invoice">
+    insert into invoice (id, invoice_title, invoice_type, 
+      user_id, money, note, 
+      address_id, status, gmt_create,
+      gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{invoiceTitle,jdbcType=VARCHAR}, #{invoiceType,jdbcType=INTEGER}, 
+      #{userId,jdbcType=BIGINT}, #{money,jdbcType=DECIMAL}, #{note,jdbcType=VARCHAR}, 
+      #{addressId,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP},
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.tyrelocation.entity.Invoice">
+    insert into invoice
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="invoiceTitle != null">
+        invoice_title,
+      </if>
+      <if test="invoiceType != null">
+        invoice_type,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="addressId != null">
+        address_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="invoiceTitle != null">
+        #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceType != null">
+        #{invoiceType,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="addressId != null">
+        #{addressId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.tyrelocation.entity.Invoice">
+    update invoice
+    <set>
+      <if test="invoiceTitle != null">
+        invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceType != null">
+        invoice_type = #{invoiceType,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="addressId != null">
+        address_id = #{addressId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.tyrelocation.entity.Invoice">
+    update invoice
+    set invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      invoice_type = #{invoiceType,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=BIGINT},
+      money = #{money,jdbcType=DECIMAL},
+      note = #{note,jdbcType=VARCHAR},
+      address_id = #{addressId,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

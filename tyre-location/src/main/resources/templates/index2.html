@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html lang="en" class="ie8 no-js">
+<html lang="en" class="ie9 no-js">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>图像识别</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="#1 selling multi-purpose bootstrap admin theme sold in themeforest marketplace packed with angularjs, material design, rtl support with over thausands of templates and ui elements and plugins to power any type of web applications including saas and admin dashboards. Preview page of Theme #1 for statistics, charts, recent events and reports"
+          name="description"/>
+    <meta content="" name="author"/>
+    <!--me-->
+    <link rel="stylesheet" href="../static/css/iconfont.css">
+
+    <!-- 开始全局强制样式 -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+          type="text/css"/>
+    <link href="../static/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="../static/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="../static/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
+          type="text/css"/>
+    <!-- 结束全局强制样式 -->
+    <!-- 开始页面级插件 -->
+    <link href="../static/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="../static/assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
+    <!-- 结束页面级插件 -->
+    <!-- 开始主题全局样式 -->
+    <link href="../static/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css"/>
+    <link href="../static/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css"/>
+    <!-- 结束主题全局样式 -->
+    <!-- 开始主题布局样式 -->
+    <link href="../static/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css"
+          id="style_color"/>
+    <link href="../static/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css"/>
+    <!-- 结束主题布局样式 -->
+    <link rel="shortcut icon" href="../static/img/favicon.ico"/>
+
+    <link href="../static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../static/css/animate.css" rel="stylesheet">
+    <!--    <link href="../static/css/style.css?v=4.1.0" rel="stylesheet">-->
+
+    <link rel="stylesheet" href="../static/css/main.min.css">
+
+    <link rel="stylesheet" href="../static/css/biz.css">
+    <link rel="stylesheet" href="../static/css/expense.css">
+</head>
+<!-- 结束的头 -->
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+
+<div class="page-wrapper">
+    <!-- 开始头 -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- 开始头 -->
+        <div class="page-header-inner ">
+            <!-- 开始的标志 -->
+            <div class="page-logo">
+                <a href="index.html">
+                    <img src="../static/assets/layouts/layout/img/logo.png" alt="logo" class="logo-default"/> </a>
+                <div class="menu-toggler sidebar-toggler">
+                    <span></span>
+                </div>
+            </div>
+            <!-- 结束标志-->
+            <!-- 开始响应式菜单切换器 -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+               data-target=".navbar-collapse">
+                <span></span>
+            </a>
+            <!-- 结束响应式菜单切换器 -->
+            <!-- 开始顶部导航菜单 -->
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+                    <!-- 开始通知下拉-->
+                    <!-- DOC: Apply "dropdown-dark" class after "dropdown-extended" to change the dropdown styte -->
+                    <!-- DOC: Apply "dropdown-hoverable" class after below "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
+                    <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                    <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
+                            <i class="icon-bell"></i>
+                        </a>
+                    </li>
+                    <!-- 结束通知下拉 -->
+                    <!-- 开始收件箱下拉 -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
+                            <i class="icon-envelope-open"></i>
+                        </a>
+                    </li>
+                    <!-- 结束收件箱下拉 -->
+                    <!-- 开始TODO 下拉  -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
+                            <i class="widget-thumb-icon icon-layers"></i>
+                        </a>
+                        <ul class="dropdown-menu extended tasks" style="width: 30px">
+                            <li class="external">
+                                <h3>
+                                    <span class="bold">
+                                        <a href="app_todo.html">文档</a>
+                                    </span>
+                                </h3>
+
+                            </li>
+
+                        </ul>
+                    </li>
+                    <!-- 结束 TODO 下拉 -->
+                    <!-- 开始用户登录下拉菜单 -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
+                            <img alt="" class="img-circle" src="../static/assets/layouts/layout/img/avatar3_small.jpg"/>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="page_user_profile_1.html">
+                                    <i class="icon-user"></i>用户中心</a>
+                            </li>
+
+                            <li class="divider"></li>
+                            <li>
+                                <a href="page_user_lock_1.html">
+                                    <i class="icon-rocket"></i>切换用户</a>
+                            </li>
+                            <li>
+                                <a href="page_user_login_1.html">
+                                    <i class="icon-key"></i>退出</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 结束用户登录下拉菜单 -->
+                    <!-- 开始快速侧栏善变 -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+
+                    <!-- 结束快速侧栏善变 -->
+                </ul>
+            </div>
+            <!-- 结束顶部导航菜单 -->
+        </div>
+        <!-- 结束头内 -->
+    </div>
+    <!-- 结束头 -->
+    <!-- 开始标题和内容分隔符 -->
+    <div class="clearfix"></div>
+    <!-- 结束标题和内容分隔符 -->
+    <!-- 开始容器 -->
+    <div class="page-container">
+        <!-- 开始栏 -->
+        <div class="page-sidebar-wrapper">
+            <!-- 开始栏 -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <div class="page-sidebar navbar-collapse collapse">
+                <!-- 开始菜单栏 -->
+                <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+                <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+                <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+                <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true"
+                    data-slide-speed="200" style="padding-top: 20px">
+                    <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                    <!-- 开始侧边栏按钮 -->
+                    <li class="sidebar-toggler-wrapper hide">
+                        <div class="sidebar-toggler">
+                            <span></span>
+                        </div>
+                    </li>
+                    <!-- 结束侧栏按钮 -->
+                    <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+
+
+                    <li class="nav-item  ">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="icon-diamond"></i>
+                            <span class="title">应用</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item  ">
+                                <a href="/application/query/all" class="nav-link ">
+                                    <span class="title">应用列表</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- 结束侧边栏菜单 -->
+                <!-- 结束侧边栏菜单 -->
+            </div>
+            <!-- 结束侧边栏 -->
+        </div>
+        <!-- 结束侧边栏 -->
+        <!-- 开始的内容 -->
+        <!--        <div class="page-content-wrapper">-->
+        <!--开始内容主体 -->
+        <!--            <div class="page-content">-->
+        <!--               -->
+        <!--            </div>-->
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <div class="page-content" style="min-height: 1182px;">
+                <!-- BEGIN PAGE HEADER-->
+                <!-- BEGIN THEME PANEL -->
+
+                <!-- END THEME PANEL -->
+                <!-- BEGIN PAGE BAR -->
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <a href="index.html">主页</a>
+                            <i class="fa fa-circle"></i>
+                        </li>
+                        <li>
+                            <span>消息中心</span>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- END PAGE BAR -->
+                <!-- BEGIN PAGE TITLE-->
+
+                <!-- END PAGE TITLE-->
+                <!-- END PAGE HEADER-->
+                <div class="inbox">
+
+                    <div class="row">
+                        <div class="col-sm-1 animated fadeInRight">
+                            <div id="bce-content" class="sidebar-expanded">
+                                <div class="main-area ui-v5">
+                                    <ul class="sidebar submenu"
+                                        style="left: 0px;top: 0px; height: auto !important; width: auto !important">
+                                        <li class="menu-header "><span class="normal-title">财务中心</span><span
+                                                class="short-title"></span>
+                                        </li>
+                                        <li class="menu-item menu-item-common myaccount ">
+                                            <a href="#/account/index" target="_self">
+                                                <i class="iconfont icon-myaccount"></i>
+                                                <span class="normal-title">财务总览</span>
+                                                <span class="short-title"></span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item menu-item-common coupon sidebar-current">
+                                            <a href="/finance/?_=1575640051560#/finance/coupon/list">
+                                                <i class="iconfont icon-coupon"></i>
+                                                <span class="normal-title">代金券</span>
+                                                <span class="short-title"></span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item menu-item-common invoice">
+                                            <a href="/finance/?_=1575640051560#/invoice/list">
+                                                <i class="iconfont icon-invoice"></i>
+                                                <span class="normal-title">发票管理</span>
+                                                <span class="short-title"></span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item menu-item-common invoice">
+                                            <a href="/finance/?_=1575640051560#/invoice/list">
+                                                <i class="iconfont icon-invoice"></i>
+                                                <span class="normal-title">订单管理</span>
+                                                <span class="short-title"></span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item menu-item-common invoice">
+                                            <a href="/finance/?_=1575640051560#/invoice/list">
+                                                <i class="iconfont icon-invoice"></i>
+                                                <span class="normal-title">续费管理</span>
+                                                <span class="short-title"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-11">
+                            <div class="billing-main-wrap main-wrap-new order-list">
+                                <div class="list-content">
+
+                                    <div class="tab-wrap">
+                                        <h2>订单管理</h2>
+                                    </div>
+
+                                    <div class="table-wrap table-full-wrap">
+                                        <div class="ui-row">
+                                            <div class="btn-group" >
+                                                <button style="background-color: #108cee;" class="btn btn-default">状态</button>
+                                                <button style="background-color: #108cee;" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="#">已支付</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#">待支付</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#">未支付</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                        <div class="ui-ctrl ui-table ui-table-filter" style="width: 100%;">
+                                            <div id="ctrl-a-table-head" class="ui-table-head" style="width: 100%;">
+                                                <div id="ctrl-a-table-head-panel" class="ui-ctrl ui-panel">
+                                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                                        <tbody>
+                                                        <tr>
+                                                            <th id="ctrl-a-table-title-cell0"
+                                                                class="ui-table-hcell"  style="width:14%;">
+                                                                <div class="ui-table-hcell-text ui-table-hcell-text-first">
+                                                                    订单号
+                                                                </div>
+                                                            </th>
+                                                            <th id="ctrl-a-table-title-cell1" class="ui-table-hcell" style="width:14%;">
+                                                                <div class="ui-table-hcell-text">产品名称</div>
+                                                            </th>
+                                                            <th id="ctrl-a-table-title-cell2" class="ui-table-hcell hcell-filter" style="width:14%;">
+                                                                <div class="ui-table-hcell-text">状态
+                                                                    <div class="ui-table-filter-panel" >
+                                                                        <label class="ui-table-filter-head iconfont icon-downarrow"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th id="ctrl-a-table-title-cell3" class="ui-table-hcell" style="width:14%;">
+                                                                <div class="ui-table-hcell-text">订单金额</div>
+                                                            </th>
+                                                            <th id="ctrl-a-table-title-cell5" class="ui-table-hcell" style="width:14%;">
+                                                                <div class="ui-table-hcell-text">配置</div>
+                                                            </th>
+                                                            <th id="ctrl-a-table-title-cell6" class="ui-table-hcell" style="width:14%;">
+                                                                <div class="ui-table-hcell-text">下单时间</div>
+                                                            </th>
+                                                            <th id="ctrl-a-table-title-cell8" class="ui-table-hcell"style="width:14%;">
+                                                                <div class="ui-table-hcell-text ui-table-hcell-text-last">操作
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                        </tbody>
+                                                        <tbody class="ui-table-body">
+                                                        <tr class="ui-table-row ui-table-row-even" th:each="item : ${data.result.getItems()}">
+                                                            <td class="ui-table-cell">
+                                                                <div class="ui-table-cell-text" th:text="${#dates.format(item.gmtModified, 'yyyy/MM/dd HH:mm')}">
+                                                                   订单号
+                                                                </div>
+                                                            </td>
+                                                            <td class="ui-table-cell">
+                                                                <div class="ui-table-cell-text" >
+                                                                    产品名称
+                                                                </div>
+                                                            </td>
+                                                            <td class="ui-table-cell">
+                                                                <div class="ui-table-cell-text">
+                                                                    状态
+                                                                </div>
+                                                            </td>
+                                                            <td class="ui-table-cell">
+                                                                <div class="ui-table-cell-text">
+                                                                    订单金额
+                                                                </div>
+                                                            </td>
+                                                            <td class="ui-table-cell">
+                                                                <div class="ui-table-cell-text" th:switch="${item.status}">
+                                                                    配置
+                                                                </div>
+                                                            </td>
+                                                            <td class="ui-table-cell">
+                                                                <div class="ui-table-cell-text">
+                                                                    下单时间
+                                                                </div>
+                                                            </td>
+                                                            <td class="ui-table-cell">
+                                                                <div class="ui-table-cell-text">
+                                                                    <a>支付</a><a style="margin-left: 20px">取消</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div id="ctrl-a-table-body" class="ui-table-body"
+                                                 style="overflow: auto; width: 100%; height: auto;">
+                                                <div  class="ui-ctrl ui-panel">
+                                                    <div class="ui-table-body-nodata">
+                                                        <div><p>无可相关数据</p></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="float: right">
+                                                <ul class="pagination">
+                                                    <li>
+                                                        <a  th:href="@{'/order/voucher?page=1'(status=${result.status})}" th:if="${result.getCurrentPage()>1}"> << </a>
+                                                    </li>
+                                                    <li>
+                                                        <a  th:href="@{'/order/voucher'(page=${result.getCurrentPage()-1}, status=${result.status})}" th:if="${result.getCurrentPage()>1}"> < </a>
+                                                    </li>
+
+                                                    <li th:each="num : ${#numbers.sequence(result.getStartLabel(), result.getEndLabel())}" th:if="${result.getEndLabel()>0}">
+                                                        <a th:style="${num==result.getCurrentPage()} ? 'background-color:#09C;border: 1px solid #09C;' : ''" th:href="@{'/order/voucher'(page=${num}, status=${result.status})}" th:text="${num}"></a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a  th:href="@{'/order/voucher'(page=${result.getCurrentPage()+1}, status=${result.status})}" th:if="${result.getCurrentPage()<result.getTotalPage()}"> > </a>
+                                                    </li>
+                                                    <li>
+                                                        <a  th:href="@{'/order/voucher'(page=${result.getTotalPage()}, status=${result.status})}" th:if="${result.getCurrentPage()<result.getTotalPage()}"> >> </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <!-- 结束内容主体 -->
+        <!--</div>-->
+        <!-- 结束内容 -->
+        <!-- 开始 快捷栏 -->
+
+        <!-- 结束 快捷栏 -->
+    </div>
+    <!-- 结束容器 -->
+    <!-- 开始 页脚 -->
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+    <!-- 开始 页脚 -->
+</div>
+
+
+<div class="portlet-body">
+    <div id="address" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 500px; height: 310px">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">添加地址</h4>
+                </div>
+                <div style="margin-left: 50px">
+
+                    <fieldset>
+                        <form action="#">
+                            <!--                            <label for="addr-show">您选择的是：-->
+                            <!--                                <input type="text" value="" id="addr-show">-->
+                            <!--                            </label>-->
+                            <!--                            <br/>-->
+                            <label> 收取人姓名：
+                                <input type="text" id="maybel">
+                            </label>
+                            <br/>
+                            <br/>
+                            <label>所在地区：
+                                <!--省份选择-->
+                                <select id="prov">
+                                    <option>=请选择省份=</option>
+
+                                </select>
+
+                                <!--城市选择-->
+                                <select id="city">
+                                    <option>=请选择城市=</option>
+                                </select>
+
+                                <!--县区选择-->
+                                <select id="country">
+                                    <option>=请选择县区=</option>
+                                </select>
+                                <!--                <button type="button" class="btn met1" onClick="showAddr()" id="button-show" >确定</button>-->
+                            </label>
+                            <br>
+                            <br/>
+                            <label>街道地址：
+                                <input type="text" id="adsDetail">
+                            </label>
+                            <br>
+                            <br/>
+                            <label>邮政编码：
+                                <input id="postal" type="text">
+                            </label>
+                            <br>
+                            <br/>
+                            <label>联系电话：
+                                <input id="mobile" type="text">
+                            </label>
+
+                        </form>
+                        <span style="color: red; display: none">错误</span>
+                        <br>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn green" style="width: 100px;height: 40px" onclick="goRetrieve()">
+                        确认
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portlet-body">
+    <div id="openInvoice" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 500px; height: 250px">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">申请发票</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100px;"><div class="scroller" style="height: 100px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                        <div class="row">
+                            <div class="col-lg-12" style="margin-left: 20px; ">
+                                <h4>请输入余额</h4>
+                                <p style="margin-top: 30px;  margin-right: 50px">
+                                    <input id="retVerify" type="text" class="col-md-6 " placeholder="请输入余额" style="display: inline-block; height: 35px;padding: 6px 12px;background-color: #fff; border: 1px solid #c2cad8;width: 300px">
+                                </p><div id="retVerify-msg" style="color: red;"></div>
+                                <p></p>
+                            </div>
+
+                        </div>
+                    </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn green" style="width: 100px;height: 40px" onclick="goRetrieve()">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../static/js/city.js"></script>
+<script src="../static/js/method.js"></script>
+
+<!--[if lt IE 9]>
+<script src="../static/assets/global/plugins/respond.min.js"></script>
+<script src="../static/assets/global/plugins/excanvas.min.js"></script>
+<script src="../static/assets/global/plugins/ie8.fix.min.js"></script>
+<![endif]-->
+<!-- 开始 核心插件-->
+<script src="../static/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+
+<script src="../static/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
+        type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
+        type="text/javascript"></script>
+<!-- 结束 核心插件 -->
+<!-- 开始 页面级别的插件 -->
+<script src="../static/assets/global/plugins/moment.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js"
+        type="text/javascript"></script>
+<script src="../static/assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/horizontal-timeline/horizontal-timeline.js"
+        type="text/javascript"></script>
+<script src="../static/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js"
+        type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+<script src="../static/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js"
+        type="text/javascript"></script>
+<!-- 结束 页面级别的插件 -->
+<!-- 开始主题全球脚本 -->
+<script src="../static/assets/global/scripts/app.min.js" type="text/javascript"></script>
+<!-- 结束 主题全球脚本 -->
+<!-- 开始 页面级别的脚本 -->
+<script src="../static/assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+<!-- 结束 页面级别的脚本-->
+<!-- 开始 主题布局脚本 -->
+<script src="../static/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../static/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+<script src="../static/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+<script src="../static/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+<!-- 结束 主题布局脚本 -->
+
+
+<!-- 全局js -->
+<script src="../static/js/jquery.min.js?v=2.1.4"></script>
+<script src="../static/js/bootstrap.min.js?v=3.3.6"></script>
+<!-- 自定义js -->
+<script src="../static/js/content.js?v=1.0.0"></script>
+<!-- iCheck -->
+<script src="../static/js/icheck.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    });
+</script>
+
+</body>
+
+</html>

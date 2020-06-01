@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.tyrelocation.repository.MessageMapper">
+  <resultMap id="BaseResultMap" type="com.test.tyrelocation.entity.Message">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="category" jdbcType="INTEGER" property="category" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="body" jdbcType="VARCHAR" property="body" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, category, title, body, status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByUserIdCount"  resultType="java.lang.Integer">
+    select
+    count(*)
+    from message
+    where user_id = #{userId,jdbcType=BIGINT}
+    <if test="queryBean.category != 0">
+    and category = #{queryBean.category}
+    </if>
+    <if test="queryBean.status==0">
+      and status in (1, 2)
+    </if>
+    <if test="queryBean.status!=0 and queryBean.status!=3">
+      and status = #{queryBean.status}
+    </if>
+    and status != 3
+  </select>
+  <select id="selectByUserIdForPage"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from message
+    where user_id = #{userId,jdbcType=BIGINT}
+    <if test="queryBean.category != 0">
+        and category = #{queryBean.category}
+    </if>
+    <if test="queryBean.status==0">
+        and status in (1, 2)
+    </if>
+    <if test="queryBean.status!=0 and queryBean.status!=3">
+        and status = #{queryBean.status}
+    </if>
+    and status != 3
+    limit #{queryBean.startRow}, #{queryBean.pageSize}
+  </select>
+  <select id="selectRoundByPrimaryKey"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from message
+    where
+    status != 3
+    and user_id = #{userId}
+    and
+    <if test="flag==1">
+        id &lt; #{id} order by id desc limit 0,1
+    </if>
+    <if test="flag==2">
+        id &gt; #{id} order by id limit 0,1
+    </if>
+
+  </select>
+  <select id="selectByIdAndUserId"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from message
+    where id = #{id,jdbcType=BIGINT}
+    and user_id = #{userId}
+    and status != 3
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from message
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.test.tyrelocation.entity.Message">
+    insert into message (id, user_id, category, 
+      title, body, status, 
+      gmt_create, gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{category,jdbcType=INTEGER}, 
+      #{title,jdbcType=VARCHAR}, #{body,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.tyrelocation.entity.Message">
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="body != null">
+        body,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="body != null">
+        #{body,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.tyrelocation.entity.Message">
+    update message
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="body != null">
+        body = #{body,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.tyrelocation.entity.Message">
+    update message
+    set user_id = #{userId,jdbcType=BIGINT},
+      category = #{category,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      body = #{body,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateBatchByPrimaryKeyToStatus" >
+    update message
+    set status = #{value,jdbcType=INTEGER}
+    where id in (
+    <foreach collection="msgIds" item="id" separator=",">
+        #{id}
+    </foreach>
+    )
+    and status != 3
+  </update>
+</mapper>

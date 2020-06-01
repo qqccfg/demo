@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地址选择</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div>
+
+    <fieldset>
+        <div>
+            <h3>地址信息</h3>
+
+            <br/>
+            <hr>
+            <br/>
+
+        </div>
+
+        <form action="#">
+
+            <label for="addr-show">您选择的是：
+                <input type="text" value="" id="addr-show">
+            </label>
+            <br/>
+            <label> 收取人姓名：
+                <input type="text" id="maybel">
+            </label>
+            <br/>
+            <br/>
+            <label >所在地区：
+                <!--省份选择-->
+                <select id="prov" >
+                    <option>=请选择省份=</option>
+
+                </select>
+
+                <!--城市选择-->
+                <select id="city" >
+                    <option>=请选择城市=</option>
+                </select>
+
+                <!--县区选择-->
+                <select id="country" >
+                    <option>=请选择县区=</option>
+                </select>
+<!--                <button type="button" class="btn met1" onClick="showAddr()" id="button-show" >确定</button>-->
+            </label>
+            <br>
+            <br/>
+            <label >街道地址：
+                <input type="text" id="adsDetail">
+            </label>
+            <br>
+            <br/>
+            <label >邮政编码：
+                <input id="postal" type="text">
+            </label>
+            <br>
+            <br/>
+            <label >联系电话：
+                <input id="mobile" type="text">
+            </label>
+        </form>
+        <hr>
+        <br>
+        <div style="float:right">
+            <a data_fsgs="1" >kk</a>
+            <button value="2" onclick="dd(2)" style="min-width: 60px;height: 30px;">确定</button>
+            <button style="min-width: 60px;height: 30px;">取消</button>
+        </div>
+
+    </fieldset>
+</div>
+
+<script src="city.js"></script>
+<script src="../../static/js/method.js"></script>
+<script type="text/javascript">
+    function dd(val) {
+        document.getElementById("prov").value="5"
+        loadCity(5)
+        document.getElementById("city").value = "2"
+        loadCountry(2)
+        document.getElementById("country").value="1"
+
+    }
+</script>
+</body>
+</html>

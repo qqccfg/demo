@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.tyrelocation.repository.ApplicationMapper">
+  <resultMap id="BaseResultMap" type="com.test.tyrelocation.entity.Application">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="application_name" jdbcType="VARCHAR" property="applicationName" />
+    <result column="application_type" jdbcType="INTEGER" property="applicationType" />
+    <result column="api_key" jdbcType="VARCHAR" property="apiKey" />
+    <result column="secret_key" jdbcType="VARCHAR" property="secretKey" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, application_name, application_type, api_key, secret_key, description, gmt_create, 
+    gmt_modified
+  </sql>
+  <sql id="ByUser_Column_List">
+    a.id, a.application_name, a.api_key, a.secret_key, a.gmt_create
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from application
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByUserId" parameterType="java.lang.Long" resultType="list" resultMap="BaseResultMap">
+    select
+    <include refid="ByUser_Column_List" />
+    from application a
+    join user_application ua on a.id=ua.application_id
+    where ua.user_id = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from application
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.test.tyrelocation.entity.Application">
+    insert into application (id, application_name, application_type,
+      api_key, secret_key, description,
+      gmt_create, gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{applicationName,jdbcType=VARCHAR}, #{applicationType,jdbcType=INTEGER}, 
+      #{apiKey,jdbcType=VARCHAR}, #{secretKey,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective"  parameterType="com.test.tyrelocation.entity.Application" >
+    insert into application
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="applicationName != null">
+        application_name,
+      </if>
+      <if test="applicationType != null">
+        application_type,
+      </if>
+      <if test="apiKey != null">
+        api_key,
+      </if>
+      <if test="secretKey != null">
+        secret_key,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="applicationName != null">
+        #{applicationName,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationType != null">
+        #{applicationType,jdbcType=INTEGER},
+      </if>
+      <if test="apiKey != null">
+        #{apiKey,jdbcType=VARCHAR},
+      </if>
+      <if test="secretKey != null">
+        #{secretKey,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertByNeed" useGeneratedKeys="true" keyProperty="id" >
+    insert into application (application_name, application_type,
+      api_key, secret_key, description)
+    values ( #{applicationName,jdbcType=VARCHAR}, #{applicationType,jdbcType=INTEGER},
+      #{apiKey,jdbcType=VARCHAR}, #{secretKey,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
+      );
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.tyrelocation.entity.Application">
+    update application
+    <set>
+      <if test="applicationName != null">
+        application_name = #{applicationName,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationType != null">
+        application_type = #{applicationType,jdbcType=INTEGER},
+      </if>
+      <if test="apiKey != null">
+        api_key = #{apiKey,jdbcType=VARCHAR},
+      </if>
+      <if test="secretKey != null">
+        secret_key = #{secretKey,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.tyrelocation.entity.Application">
+    update application
+    set application_name = #{applicationName,jdbcType=VARCHAR},
+      application_type = #{applicationType,jdbcType=INTEGER},
+      api_key = #{apiKey,jdbcType=VARCHAR},
+      secret_key = #{secretKey,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>重置密码</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>
+                    找回密码 <small>您正在找回的账号是<div th:text="${username}"></div></small>
+                    <input id="key" type="text" th:value="${key}" style="display: none">
+                </h1>
+            </div>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">新密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" />
+                        <div id="password-msg" style="color: red;"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">确认密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="affirmPassword" />
+                        <div id="affirmPassword-msg" style="color: red;"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-default" onclick="present()">确认</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../assets/pages/scripts/ui-toastr.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
+
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="../../assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="../../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../assets/pages/scripts/login-5.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+<!-- END THEME LAYOUT SCRIPTS -->
+
+<script src="../../assets/pages/scripts/ui-toastr.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+    function deleteChileNode(val) {
+        for (var i=0; i<val.childNodes.length; i++){
+            val.removeChild(val.childNodes[i])
+        }
+    }
+    function present() {
+        reg=/^(?=.*[a-zA-Z])(?=.*[1-9])(?=.*[!|@|#|$|%|^|&|*]).{8,14}$/;
+        var password = document.getElementById("password").value
+        var affirmPassword = document.getElementById("affirmPassword").value
+        var key = document.getElementById("key").value
+        var password_msg = document.getElementById("password-msg")
+        var affirmPassword_msg = document.getElementById("affirmPassword-msg")
+        var small = document.createElement("small")
+        deleteChileNode(password_msg)
+        deleteChileNode(affirmPassword_msg)
+        if (!reg.test(password)){
+            small.innerHTML = "8-14字符且需包含数字,字母,特殊字符{!@#$%^&*}"
+            password_msg.appendChild(small)
+        }else if (password!=affirmPassword){
+            small.innerHTML = "两次输入的密码不一致"
+            affirmPassword_msg.appendChild(small)
+        }else {
+            $.ajax({
+                url : "/user/resetPassword",
+                type : "POST",
+                data : {
+                    "key" : key,
+                    "password" : password
+                },
+                success : function (result, status) {
+                    if (result.code==200){
+                        window.location.href = "/user/success"
+                    }else if(result.code==13){
+                        small.innerHTML = result.message
+                        password_msg.appendChild(small)
+                    }else {
+                        small.innerHTML = "未知错误"
+                        password_msg.appendChild(small)
+                    }
+                }
+            })
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="biz.css">
+    <link rel="stylesheet" href="main.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="expense.css">
+    <link rel="stylesheet" href="iconfont.css">
+    <script src="main.js"></script>
+    <script src="dep.min.js"></script>
+    <script src="combine.min.js"></script>
+    <script type="text/javascript" src="hm.js"></script>
+    <script type="text/javascript" src="esl.js"></script>
+    <script type="text/javascript" src="loadjs.js"></script>
+    <script type="text/javascript" src="loadjs1.js"></script>
+    <title>百度智能云-管理中心</title>
+</head>
+<body>
+<div id="voucherFrame" class="modal fade in" tabindex="-1" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 500px; height: 250px">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">充值选项</h4>
+            </div>
+            <div class="modal-body">
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100px;"><div class="scroller" style="height: 100px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
+                    <div class="row">
+                        <div class="col-lg-12" style="margin-left: 20px; ">
+                            <h4>请选择充值金额</h4>
+                            <p style="margin-top: 30px;  margin-right: 50px">
+                                <div>
+                                    <label><input name="pay_money" type="radio" value="10">10元 </label>
+                                    <label style="margin-left: 10px"><input name="pay_money" type="radio" value="20">20元 </label>
+                                    <label style="margin-left: 10px"><input name="pay_money" type="radio" value="50">50元 </label>
+                                    <label style="margin-left: 10px"><input name="pay_money" type="radio" value="100">100元 </label>
+                                    <label style="margin-left: 10px"><input name="pay_money" type="radio" value="1000">1000元 </label>
+                                </div>
+                            </p><div id="retVerify-msg" style="color: red;"></div>
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn green" style="width: 100px;height: 40px" onclick="goRetrieve()">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

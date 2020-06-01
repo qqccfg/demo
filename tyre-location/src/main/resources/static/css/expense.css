@@ -1,0 +1,3158 @@
+@charset "utf-8";.num-calc {
+    display: table;
+    color: #000
+}
+
+.num-calc .calc-item {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.num-calc .calc-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px
+}
+
+.num-calc .calc-title [class*=icon] {
+    margin-left: 5px;
+    vertical-align: -3px
+}
+
+.num-calc .calc-value {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1;
+    padding: 2px 0
+}
+
+.num-calc .calc-value.text-underline {
+    border-bottom: 1px dashed #000;
+    cursor: pointer
+}
+
+.num-calc .calc-value em {
+    font-size: 36px
+}
+
+.num-calc .calc-value span {
+    font-size: 20px;
+    font-weight: 400
+}
+
+.num-calc .calc-value b {
+    font-size: 18px;
+    font-weight: 400
+}
+
+.num-calc .calc-item.symbol {
+    font-size: 24px;
+    padding-left: 70px;
+    padding-right: 70px
+}
+
+.num-calc .calc-item.tips,.num-calc .calc-item.toolbar {
+    padding-left: 20px;
+    vertical-align: bottom;
+    padding-bottom: 5px
+}
+
+.num-calc-min-wrap {
+    position: relative;
+    font-size: 12px;
+    line-height: 22px;
+    color: #999;
+    margin-left: 15px;
+    margin-bottom: 8px
+}
+
+.num-calc-min-wrap:last-child {
+    margin-bottom: 0
+}
+
+.num-calc-min-wrap:before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 9px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #ddd
+}
+
+.num-calc-min-wrap .calc-title {
+    font-weight: 700
+}
+
+.num-calc-min {
+    display: table
+}
+
+.num-calc-min .calc-item {
+    display: table-cell;
+    vertical-align: top
+}
+
+.num-calc-min .calc-item.symbol {
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.num-calc-min .calc-item.symbol.total {
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.num-calc-min-wrap.is-current {
+    color: #000
+}
+
+.num-calc-min-wrap.is-current:before {
+    background-color: #353535
+}
+
+.num-calc-min-wrap.is-current .calc-value {
+    color: #666
+}
+
+.num-calc-min-text {
+    padding: 0 0 0 15px
+}
+
+.num-calc-tips {
+    color: #003B80;
+    font-size: 12px;
+    padding: 0 0 0 15px;
+    line-height: 20px
+}
+
+.num-calc-tips-info {
+    padding: 0 0 0 10px;
+    position: relative
+}
+
+.num-calc-tips-info:before {
+    position: absolute;
+    content: "*";
+    left: 0;
+    top: 3px;
+    color: #003B80;
+    font-size: 16px
+}
+
+.expense-dialog-step {
+    margin-bottom: 20px
+}
+
+.expense-dlg-num-wrap {
+    margin-top: 20px
+}
+
+.expense-dialog-text-form .form-inner {
+    padding: 10px 20px;
+    background: #f6f6f6
+}
+
+.expense-dialog-text-form .form-bd {
+    display: table;
+    width: 100%
+}
+
+.expense-dialog-text-form .form-ft {
+    display: table;
+    width: 100%;
+    border-top: 1px solid #ddd
+}
+
+.expense-dialog-text-form .form-item {
+    display: table-row
+}
+
+.expense-dialog-text-form .form-item-info,.expense-dialog-text-form .form-item-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.expense-dialog-text-form .form-item-controls,.expense-dialog-text-form .form-item-info,.expense-dialog-text-form .form-item-label {
+    display: table-cell;
+    padding: 10px 0;
+    vertical-align: top
+}
+
+.expense-dialog-text-form .form-item-controls {
+    padding: 10px
+}
+
+.expense-dialog-text-form .form-item-info {
+    text-align: right
+}
+
+.expense-dialog-text-form .form-item-label {
+    color: #666
+}
+
+.expense-dialog-text-form .form-ft .form-item-controls,.expense-dialog-text-form .form-ft .form-item-info,.expense-dialog-text-form .form-ft .form-item-label {
+    vertical-align: middle
+}
+
+.expense-dialog-success h3 {
+    font-size: 18px
+}
+
+.expense-dialog-success .tea-icon-success.size-l {
+    margin-right: 10px
+}
+
+.expense-dialog-success .tea-dialog__body {
+    padding-left: 42px
+}
+
+.expense-dialog-icon h3 {
+    font-size: 18px
+}
+
+.expense-dialog-icon h3 .tea-icon {
+    margin: -2px 10px 0 0
+}
+
+.expense-dialog-res .expense-dialog-title {
+    margin-bottom: 10px
+}
+
+.expense-dialog-res .expense-dialog-text {
+    margin-top: 10px
+}
+
+.expense-num-mod {
+    font-size: 14px;
+    color: #ff7800
+}
+
+.expense-num-mod em {
+    font-size: 20px
+}
+
+.result {
+    text-align: center;
+    padding-top: 10px
+}
+
+.result-icon-success {
+    display: inline-block;
+    width: 96px;
+    height: 74px;
+    background-image: url(sprite/expense-201908061631.svg);
+    margin-bottom: 15px;
+    background-position: 0.42% 0.53%;
+    background-size: 347.91666666666663% 356.7567567567568%;
+    background-repeat: no-repeat
+}
+
+.result-info {
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666
+}
+
+.result-info .text {
+    color: #000 !important
+}
+
+.result-info-title {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px
+}
+
+.expense-invoice-topswitch {
+    font-size: 12px
+}
+
+.expense-invoice-topswitch .expense-back {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 18px 0 -5px;
+    text-align: center;
+    cursor: pointer
+}
+
+.expense-invoice-topswitch .tea-icon-btnback {
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    cursor: pointer
+}
+
+.expense-iv-table-bar {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.expense-iv-table-bar-l {
+    float: left;
+    white-space: nowrap
+}
+
+.expense-iv-table-bar-num {
+    display: inline-block
+}
+
+.expense-iv-table-bar-num em {
+    font-size: 24px
+}
+
+.expense-iv-table-bar-num span {
+    font-size: 16px
+}
+
+.expense-iv-table-bar-num b {
+    font-size: 14px
+}
+
+.expense-iv-table-bar-num span b {
+    font-weight: 400
+}
+
+.expense-iv-table-bar-link {
+    color: #ccc;
+    display: inline-block;
+    margin-left: 10px
+}
+
+.expense-iv-table-bar-info {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 20px;
+    top: -5px
+}
+
+.expense-iv-table-bar-link a {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px
+}
+
+.expense-iv-table-bar-link a:after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 12px;
+    background: #ccc;
+    top: 50%;
+    margin-top: -6px;
+    right: 0
+}
+
+.expense-iv-table-bar-link a:last-child:after {
+    display: none
+}
+
+.expense-iv-table-bar-r {
+    float: right;
+    white-space: nowrap;
+    padding-top: 6px
+}
+
+.expense-iv-table-bar-r .tea-form--search,.expense-iv-table-bar-r .tea-segment {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal
+}
+
+.expense-iv-table-bar-r .tea-form--search {
+    min-width: 220px;
+    margin-left: 10px
+}
+
+.expense-iv-table-cell-txt {
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.expense-iv-table-bar-button {
+    margin-left: 10px
+}
+
+.expense-table-edit {
+    margin-left: -5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.expense-table-edit a,.expense-table-edit span {
+    position: relative;
+    padding: 3px 5px;
+    margin-right: 3px
+}
+
+.expense-table-edit span {
+    vertical-align: middle
+}
+
+.expense-table-edit a.current {
+    background-color: rgba(0,100,255,.15);
+    border-radius: 2px
+}
+
+.expense-table-edit a.text-underline:hover {
+    text-decoration: none
+}
+
+.expense-table-edit a.text-underline {
+    padding: 0
+}
+
+.expense-table-edit .tea-icon-pencil:hover {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-size: 2087.5% 1650%;
+    background-position: 97.8% 42.34%;
+    background-repeat: no-repeat
+}
+
+.expense-table-edit-link {
+    color: #000;
+    margin-left: 10px
+}
+
+.expense-iv-after-table-bar {
+    position: relative;
+    margin: 12px 0 0
+}
+
+.expense-iv-after-table-info {
+    margin-top: 22px
+}
+
+.expense-iv-after-table-bar-r {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.expense-iv-after-table-bar-r span {
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.expense-iv-after-table-bar-r a {
+    vertical-align: middle
+}
+
+.expense-iv-after-table-bar-l i {
+    margin-right: 3px
+}
+
+.expense-iv-after-table-bar-l span {
+    vertical-align: middle;
+    display: inline-block
+}
+
+.expense-iv-table-bar-l .num-calc-min-wrap {
+    display: inline-block;
+    color: #444;
+    font-size: 14px;
+    position: relative;
+    top: 6px;
+    margin-left: 0
+}
+
+.expense-iv-table-bar-l .num-calc-min-wrap:before {
+    display: none
+}
+
+.expense-iv-table-bar-l .num-calc-min-wrap .calc-title,.expense-iv-table-bar-l .num-calc-min-wrap .calc-value {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 400
+}
+
+.expense-iv-table-bar-l .num-calc-min-wrap .calc-value {
+    margin-left: 5px
+}
+
+.expense-iv-table-bar-l .num-calc-min-wrap .calc-value b {
+    font-weight: 400
+}
+
+.expense-invoice-dlg-qrtxt {
+    margin: 0 0 10px;
+    font-size: 12px
+}
+
+.expense-invoice-dlg-qrtxt .icon {
+    position: relative;
+    top: -2px;
+    margin: 0 2px 0 0;
+    vertical-align: middle
+}
+
+.expense-invoice-dlg-qrtxt a {
+    margin-right: 5px
+}
+
+.expense-invoice-dlg-qrtxt em {
+    font-weight: 700
+}
+
+.expense-invoice-dlg-form .tea-input.size-l {
+    width: 100%
+}
+
+.expense-bank-account .tea-form__controls--text {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.expense-bank-account .tea-input.size-full-width {
+    width: calc(100% - 82px)
+}
+
+.expense-bank-account .tea-select {
+    border-right: none;
+    width: auto
+}
+
+.expense-bank-select {
+    position: relative
+}
+
+.expense-bank-select .tea-form__controls .tea-input {
+    padding-right: 26px;
+    background: rgba(0,0,0,0)
+}
+
+.expense-bank-select .tea-form__controls::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 29px;
+    top: 5px;
+    pointer-events: none;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 95.28% 78.63%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-invoice-dlg-select-2,.expense-invoice-dlg-select-3 {
+    font-size: 0;
+    display: inline-block;
+    width: 100%
+}
+
+.expense-invoice-dlg-select-2 .tea-cascader {
+    width: 100%
+}
+
+.expense-invoice-dlg-select-2 .tea-input.size-m,.expense-invoice-dlg-select-2 .tea-select.size-m,.expense-invoice-dlg-select-2 .tea-textarea.size-m {
+    width: calc((100% - 20px)/ 2)
+}
+
+.expense-withdraw-application.tea-btn.is-disabled {
+    border-color: #ddd;
+    background-color: #ddd;
+    color: #fff;
+    cursor: not-allowed
+}
+
+.expense-invoice-dlg-select-3 .tea-select {
+    width: calc((100% - 1px - 40px)/ 3);
+    margin: 0 10px
+}
+
+.expense-invoice-dlg-select-3 .tea-select:first-child {
+    margin-right: 10px;
+    margin-left: 0
+}
+
+.expense-invoice-dlg-select-3 .tea-select:last-child {
+    margin-left: 10px;
+    margin-right: 0
+}
+
+.expense-invoice-dlg-form-unit {
+    font-size: 14px;
+    vertical-align: middle;
+    margin-left: 10px
+}
+
+.expense-record-dlg-form .expense-dialog-text-form {
+    margin: 5px 0 0;
+    font-size: 12px
+}
+
+.expense-record-dlg-form .expense-dialog-text-form .form-inner {
+    padding: 5px 12px
+}
+
+.expense-record-dlg-form .expense-dialog-text-form .form-item-controls,.expense-record-dlg-form .expense-dialog-text-form .form-item-label {
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+.expense-recharge-dlg-form .expense-message {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.expense-recharge-dlg-form .expense-tag-input,.expense-recharge-dlg-form .expense-tag-list,.expense-recharge-dlg-form.expense-tag-info {
+    margin-bottom: 10px
+}
+
+.expense-recharge-dlg-form .expense-tag-input-tip {
+    display: block;
+    padding: 2px 0 0
+}
+
+.expense-recharge-dlg-form .tea-datepicker,.expense-recharge-dlg-form .tea-datepicker__input,.expense-recharge-dlg-form .tea-datepicker__input .tea-input {
+    width: 100%
+}
+
+.expense-recharge-dlg-form .expense-message {
+    margin: 0 0 0 10px;
+    padding: 0
+}
+
+.expense-recharge-dlg-form .tea-form__controls--text {
+    padding-top: 0
+}
+
+.expense-contentview {
+    position: relative
+}
+
+.expense-contentview-header {
+    padding-bottom: 0;
+    height: auto
+}
+
+.expense-contentview-header .tea-layout__header-title {
+    padding-bottom: 0
+}
+
+.expense-contentview-header .tea-tabs {
+    margin: 10px 0 0
+}
+
+.expense-contentview-header .tea-tabs__tabitem {
+    font-size: 12px
+}
+
+.expense-contentview-header .tea-tabs__tabbar:before {
+    display: none
+}
+
+.expense-contentview-header .tea-tabs__tab {
+    padding: 0
+}
+
+.expense-layout-footer {
+    height: 60px;
+    width: 1360px;
+    margin: 20px auto 0
+}
+
+.expense-layout-footer-inner {
+    position: relative;
+    left: 0;
+    height: 100%
+}
+
+.expense-layout-footer.fixed {
+    position: fixed;
+    margin: 0;
+    width: auto;
+    left: 15.5%;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background-color: #fff;
+    border-top: #ddd 1px solid;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+    z-index: 3
+}
+
+.fixed .expense-layout-footer-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.expense-layout-footer-label,.expense-layout-footer-num,.expense-layout-footer-txt {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.expense-layout-footer-num {
+    bottom: 1px
+}
+
+.expense-layout-footer-l {
+    height: 70px;
+    display: table-cell;
+    vertical-align: middle
+}
+
+.expense-layout-footer-r {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    white-space: nowrap;
+    margin-top: -15px
+}
+
+.expense-layout-footer-r .tea-btn {
+    margin-left: 20px
+}
+
+.expense-contentview .tea-justify-grid__col--right .tea-form--search {
+    margin-left: 10px
+}
+
+.expense-contentview-invoice .tea-content__body,.expense-contentview-invoice .tea-layout__content-body {
+    padding-bottom: 80px
+}
+
+.expense-grid-operation {
+    position: relative
+}
+
+.expense-grid-operation-panel {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.expense-grid-operation-panel .tea-search {
+    width: 220px
+}
+
+.expense-grid-operation-panel .tea-tabs__tabpanel {
+    padding-top: 0
+}
+
+.expense-grid-operation .tea-tabs__tabitem {
+    height: 42px
+}
+
+.expense-grid-operation .tea-tabs__tabpanel {
+    padding-top: 0
+}
+
+.expense-grid-operation-panel .tea-datepicker,.expense-grid-operation-panel .tea-search {
+    margin-left: 10px
+}
+
+.tea-justify-grid h3 {
+    font-size: 14px
+}
+
+.tea-justify-grid .tea-justify-grid__col--right .tea-btn--icon {
+    margin-left: 10px;
+    height: 30px
+}
+
+.tea-justify-grid h3 label {
+    position: relative;
+    top: -2px;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 0 5px
+}
+
+.tea-justify-grid h3 label span {
+    vertical-align: middle;
+    margin: 0 0 0 5px
+}
+
+.tea-justify-grid .expense-link-external {
+    font-size: 12px
+}
+
+.tea-justify-grid__col .expense-text-label {
+    vertical-align: middle
+}
+
+.tea-form.size-full-width .tea-form__controls .tea-icon-valid {
+    right: 0;
+    top: 0
+}
+
+.tea-form.size-full-width .tea-form__controls.tea-form__controls .tea-form--search {
+    display: inline-block;
+    width: 100%
+}
+
+.tea-form.size-full-width .tea-form__controls.tea-form__controls--text .tea-icon-valid {
+    margin-top: 13px
+}
+
+.tea-card__header .tea-justify-grid__col--right {
+    padding-right: 20px
+}
+
+.tea-list--option>li .tea-icon-info {
+    margin: -2px 0 0 5px
+}
+
+.tea-dialog .expense-form-content-text {
+    margin: 0 0 10px
+}
+
+.tea-dialog .tea-icon-warning,.tea-table .tea-icon-warning {
+    position: relative;
+    margin-left: 5px;
+    top: -1px
+}
+
+.tea-dialog .tea-alert {
+    margin-right: 24px
+}
+
+.expense-dialog-alert .tea-alert {
+    margin-right: 0
+}
+
+.tea-alert {
+    padding: 10px 20px
+}
+
+.tea-form .expense-form-text {
+    margin-bottom: 3px
+}
+
+.tea-tabs .tea-tabs__tabbar .tea-segment {
+    position: absolute;
+    right: 0;
+    top: -10px
+}
+
+.tea-tabs .tea-tabs__tabbar .tea-segment button {
+    margin: 0 0 0 10px
+}
+
+.tea-table+.tea-pagination {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0
+}
+
+.tea-card .tea-justify-grid {
+    margin-bottom: 15px
+}
+
+.tea-datepicker.is-hide .tea-datepicker__input {
+    display: none
+}
+
+.tea-dialog .tea-form__text.text-unit {
+    margin: 0 0 0 8px
+}
+
+.tea-form__item.is-controls-text .tea-form__controls--text {
+    padding-top: 0
+}
+
+.tea-table__box .tea-text-right {
+    padding-right: 20px
+}
+
+.tea-form .expense-verify {
+    margin: 10px 0 0
+}
+
+a.tea-text:hover {
+    text-decoration: none;
+    color: #006EFF !important
+}
+
+.tea-table .expense-link {
+    vertical-align: baseline;
+    padding: 0 4px
+}
+
+.tea-text-underline {
+    cursor: pointer
+}
+
+.tea-justify-grid .tea-justify-grid__col {
+    font-size: 12px
+}
+
+.icon-code {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 50.629999999999995% 37.5%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.icon-step-check {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 0.36% 76.82%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-step-bill {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 45.62% 76.82%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-step-mail {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 22.99% 55.910000000000004%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-apply-offline {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 36.13% 0.44999999999999996%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-cloud-print {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 81.39% 21.36%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-step-reject {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 0.36% 55.910000000000004%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-step-cancel {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 22.99% 76.82%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-step-invalid {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 45.62% 55.910000000000004%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-step-return {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 58.76% 21.36%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-step-sign {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 58.76% 0.44999999999999996%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-step-wait {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 22.99% 35%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-order {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 81.39% 42.27%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-template {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 0.36% 35%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-project {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 81.39% 0.44999999999999996%;
+    background-size: 556.6666666666666% 600%;
+    background-repeat: no-repeat
+}
+
+.icon-download--blue {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 97.8% 56.85%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.icon-trig-down {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 56.28999999999999% 37.5%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.icon-plus--blue {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 95.28% 93.15%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.icon-notice--yellow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 97.8% 49.6%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.icon-coin {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 81.45% 76.21%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.icon-query {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 75.79% 76.21%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.icon-loading {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    -webkit-animation: spin .6s linear infinite;
+    animation: spin .6s linear infinite;
+    background-position: 97.8% 64.11%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.icon-dismiss {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 89.62% 78.63%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+:hover.icon-dismiss {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 97.8% 27.82%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.text-underline {
+    border-bottom: 1px dashed #000;
+    cursor: pointer
+}
+
+.tea-text-danger.text-underline {
+    border-bottom-color: #e54545
+}
+
+.divide-line {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    background: #ccc;
+    width: 1px;
+    height: 10px
+}
+
+.expense-btn-link--weak {
+    color: #000
+}
+
+.expense-text-bold {
+    font-weight: 700
+}
+
+.expense-text-warning {
+    color: #ff7800
+}
+
+.expense-text-label {
+    cursor: pointer;
+    color: #888;
+    font-size: 12px
+}
+
+.expense-text-label:hover {
+    color: #006EFF
+}
+
+.expense-gap {
+    margin-left: 8px
+}
+
+.expense-process-item {
+    position: relative;
+    margin: 12px 2px 0;
+    border-bottom: 1px solid #ddd
+}
+
+.expense-process-item-hd {
+    font-weight: 700
+}
+
+.expense-process-item-info-item {
+    margin: 0 10px 0 0
+}
+
+.expense-process-item-info,.expense-process-item-tit {
+    padding: 0 0 2px
+}
+
+.expense-process-item-bd {
+    padding: 0 0 8px
+}
+
+.expense-process-item-detail {
+    padding-left: 15px;
+    position: relative;
+    margin: 5px 0;
+    display: none
+}
+
+.expense-process-item-detail:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 4px;
+    width: 5px;
+    height: 5px;
+    border: 2px solid #006eff;
+    border-radius: 50%
+}
+
+.expense-process-item:first-child {
+    margin: 0
+}
+
+.expense-process-item:last-child {
+    padding: 0;
+    border: 0
+}
+
+.expense-process-item-text::after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.expense-process-item-date {
+    color: #888;
+    float: left
+}
+
+.expense-process-item-link {
+    float: right
+}
+
+.expense-process-item.succeed {
+    color: #888
+}
+
+.expense-process-item.succeed .expense-process-item-detail:before {
+    border-color: #bbb;
+    background: #bbb
+}
+
+.expense-process .tea-step--dot {
+    margin: -5px 0 0
+}
+
+.expense-process .tea-step--dot .tea-step__content {
+    font-size: 12px
+}
+
+.expense-process .tea-step.tea-step--dot .tea-step__item {
+    padding-bottom: 0
+}
+
+.expense-process .tea-step--dot .tea-step__description {
+    margin-top: 3px;
+    color: #bbb
+}
+
+.expense-process .tea-step__title {
+    font-weight: 400
+}
+
+.expense-process .tea-step.tea-step--dot .tea-step__title {
+    margin-top: 4px
+}
+
+.expense-form {
+    display: block;
+    padding: 20px
+}
+
+.expense-form:after {
+    display: block;
+    content: "";
+    clear: both
+}
+
+.expense-form .tea-form__item {
+    float: left;
+    width: 45%
+}
+
+.expense-form .tea-form__label {
+    width: 90px
+}
+
+.expense-form-panel {
+    background: #f8f8f8;
+    padding: 10px 12px 14px
+}
+
+.expense-form-panel .tea-form__controls,.expense-form-panel .tea-form__label {
+    padding-bottom: 0 !important
+}
+
+.expense-form-panel .panel-status {
+    text-align: center
+}
+
+.expense-form-panel .expense-table-edit {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px
+}
+
+.expense-form-panel .expense-table-edit .current {
+    margin-left: 8px
+}
+
+.expense-form-panel .tea-form__label {
+    width: 55px
+}
+
+.expense-form-panel .tea-link-external {
+    margin-left: 4px
+}
+
+.expense-form-panel-title {
+    padding: 5px 0;
+    white-space: nowrap;
+    width: 55px;
+    overflow: visible
+}
+
+.expense-form-valid .tea-form__controls.is-error .tea-icon-valid {
+    display: none
+}
+
+.expense-form-valid .tea-form__text {
+    color: #000
+}
+
+.expense-form-valid .expense-form-item-nolabel .expense-alert {
+    margin-left: 0
+}
+
+.expense-form-line {
+    margin-top: 30px;
+    border-collapse: collapse
+}
+
+.expense-form-line .tea-form__item:not(:last-child) {
+    border-bottom: 1px solid #F2F2F2
+}
+
+.expense-form-line .tea-form__controls,.expense-form-line .tea-form__label {
+    padding-top: 16px
+}
+
+.expense-form-line .tea-form__controls {
+    padding-bottom: 8px
+}
+
+.expense-form-line-title {
+    display: inline-block;
+    width: 120px;
+    vertical-align: middle
+}
+
+.expense-form-line .tea-form__label .tea-text-danger {
+    font-size: 12px;
+    display: inline-block;
+    transform: scale(.83);
+    margin: 0 0 0 5px
+}
+
+.tea-step.expense-step {
+    text-align: center
+}
+
+.tea-step.expense-step .tea-step__item {
+    text-align: center;
+    padding-right: 160px
+}
+
+.tea-step.expense-step .tea-step__item:last-child {
+    padding-right: 0
+}
+
+.tea-step.expense-step .tea-step__content {
+    display: block;
+    margin-top: 10px
+}
+
+.tea-step.expense-step .tea-step__title {
+    margin-top: 11px;
+    font-weight: 400;
+    font-size: 12px
+}
+
+.tea-step.expense-step .tea-step__arrow {
+    position: relative;
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    content: "";
+    display: inline-block;
+    margin: 0 0 0 -140px;
+    line-height: 1.2;
+    left: 100%;
+    bottom: 8px;
+    background: #006EFF;
+    background: -moz-linear-gradient(left,#76b9ff 0,#006eff 100%);
+    background: -webkit-linear-gradient(left,#76b9ff 0,#006eff 100%);
+    background: linear-gradient(to right,#76b9ff 0,#006eff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76b9ff', endColorstr='#006eff', GradientType=1 );
+    background-repeat: no-repeat
+}
+
+.tea-step.expense-step .tea-step__arrow:after {
+    position: absolute;
+    content: '';
+    width: 7px;
+    height: 1px;
+    background-color: #006eff;
+    right: 0;
+    top: -3px;
+    transform: rotate(45deg)
+}
+
+.tea-step.expense-step .tea-step__item.is-current .tea-step__arrow {
+    background: 0 0;
+    border-bottom: 1px dashed #BEC5D5
+}
+
+.tea-step.expense-step .tea-step__item.is-current .tea-step__arrow:after {
+    display: none
+}
+
+.tea-step.expense-step .tea-step__pic {
+    position: relative
+}
+
+.tea-step.expense-step .tea-step__pic .icon {
+    display: inline-block;
+    width: 60px;
+    height: 44px
+}
+
+.tea-step.expense-step .tea-step-count {
+    position: absolute;
+    position: absolute;
+    vertical-align: 10px;
+    padding: 0 5px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 10px;
+    background-color: #e54545;
+    color: #fff;
+    font-size: 12px;
+    top: -7px;
+    right: -10px
+}
+
+.tea-step.expense-step .tea-step__item.is-current~.tea-step__item .tea-step__pic .icon {
+    filter: grayscale(100%);
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    opacity: .5
+}
+
+.tea-step.expense-step .icon-arrow {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle
+}
+
+.tea-step.expense-step .qc-nav-arrows {
+    cursor: pointer
+}
+
+.tea-step.expense-step-info {
+    position: relative;
+    display: inline-block;
+    margin: 0
+}
+
+.tea-step.expense-step-info:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    height: 2px;
+    right: 0;
+    margin: -1px 0 0;
+    background: #D5DBE4;
+    top: 50%
+}
+
+.tea-step.expense-step-info .tea-step__item {
+    position: relative;
+    width: 220px;
+    height: 85px;
+    margin: 0
+}
+
+.tea-step.expense-step-info .tea-step__item:first-child {
+    width: 18px
+}
+
+.tea-step.expense-step-info .tea-step__title {
+    max-width: none;
+    font-weight: 400
+}
+
+.tea-step.expense-step-info .tea-step__content {
+    position: absolute;
+    width: 220px;
+    right: -50%;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    height: 100%
+}
+
+.tea-step.expense-step-info .tea-step__item.is-current .tea-step__content {
+    z-index: 2
+}
+
+.tea-step.expense-step-info .step-text {
+    margin: 47px 0 0
+}
+
+.tea-step.expense-step-info .tea-step__item:first-child .tea-step__content {
+    left: 0;
+    right: auto;
+    text-align: left
+}
+
+.tea-step.expense-step-info .tea-step__item:last-child .tea-step__content {
+    right: 0;
+    text-align: right
+}
+
+.tea-step.expense-step-info .tea-step__arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin: -1px 0 0;
+    height: 2px;
+    background: #0872ff;
+    background: -moz-linear-gradient(left,#0872ff 0,#5ea4ff 100%);
+    background: -webkit-linear-gradient(left,#0872ff 0,#5ea4ff 100%);
+    background: linear-gradient(to right,#0872ff 0,#5ea4ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0872ff', endColorstr='#5ea4ff', GradientType=1 );
+    width: auto
+}
+
+.tea-step.expense-step-info .tea-step__item.is-error .tea-step__arrow {
+    background: #0872ff;
+    background: -moz-linear-gradient(left,#0872ff 0,#ff3232 100%);
+    background: -webkit-linear-gradient(left,#0872ff 0,#ff3232 100%);
+    background: linear-gradient(to right,#0872ff 0,#ff3232 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0872ff', endColorstr='#ff3232', GradientType=1 )
+}
+
+.tea-step.expense-step-info .tea-step__item:first-child .tea-step__arrow {
+    display: none
+}
+
+.tea-step.expense-step-info .step-status {
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -12px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 91.94% 27.82%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.expense-step-info .tea-step__item .step-status {
+    background-image: url(sprite/expense-201908061631.svg);
+    z-index: 2;
+    background-position: 91.94% 56.85%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.expense-step-info .tea-step__item.is-current .step-status {
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -12px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 91.94% 49.6%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.expense-step-info .tea-step__item.is-error .step-status,.tea-step.expense-step-info .tea-step__item:last-child.is-error .step-status {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 91.94% 20.560000000000002%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.expense-step-info .tea-step__item:first-child .step-status {
+    left: 0;
+    background-image: url(sprite/expense-201908061631.svg);
+    margin-left: -1px;
+    background-position: 91.94% 64.11%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.expense-step-info .tea-step__item:last-child .step-status {
+    left: auto;
+    right: -5px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 91.94% 71.37%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.expense-step-info .tea-step__item.is-current~.tea-step__item .tea-step__arrow {
+    background: 0 0
+}
+
+.tea-step.expense-step-info .tea-step__item.is-current~.tea-step__item .step-status {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 91.94% 27.82%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.expense-step-info .tea-step__item.is-current~.tea-step__item:last-child .step-status {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 91.94% 42.34%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-step .expense-step-header .tea-text-weak {
+    font-size: 12px;
+    font-weight: 400
+}
+
+.expense-step .expense-step-header h3 {
+    height: 44px;
+    line-height: 44px
+}
+
+.expense-step .expense-step-header h3 .icon {
+    position: relative;
+    top: 0;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+    zoom:.8}
+
+.expense-step .expense-step-body {
+    padding: 10px 0 0 56px
+}
+
+.expense-step-vertical .tea-step__title {
+    max-width: none
+}
+
+.expense-step-vertical .tea-step__num {
+    float: left
+}
+
+.expense-step-vertical .tea-step__content {
+    display: block;
+    overflow: hidden
+}
+
+.expense-step-vertical .expense-label {
+    margin: 15px 0 0
+}
+
+.expense-step-vertical .tea-step__description {
+    color: #444
+}
+
+.expense-step-vertical .expense-form-panel {
+    margin-bottom: 12px;
+    width: 615px
+}
+
+.expense-step-vertical .form-expreess {
+    width: 624px
+}
+
+.expense-step-vertical .action-wrap {
+    margin: 20px 0 0
+}
+
+.expense-step-vertical .expense-tag {
+    margin: 10px 0 0
+}
+
+.tea-step.expense-step-alternative .tea-step__tips {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 6px 0 0;
+    width: auto
+}
+
+.tea-step.expense-step-alternative .tea-step__item,.tea-step.expense-step-alternative .tea-step__num {
+    vertical-align: top
+}
+
+.tea-step.expense-step-alternative .tea-step__arrow {
+    top: 48px
+}
+
+.tea-step.is-disabled .tea-step__item {
+    color: #bbb !important
+}
+
+.tea-step.is-disabled .tea-step__item .tea-step__content .step-status {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 91.94% 27.82%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.is-disabled .tea-step__item:first-child .tea-step__content .step-status {
+    background-image: url(sprite/expense-201908061631.svg);
+    margin-left: -5px;
+    background-position: 91.94% 35.08%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.is-disabled .tea-step__item:last-child .tea-step__content .step-status {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 91.94% 42.34%;
+    background-size: 1391.6666666666665% 1650%;
+    background-repeat: no-repeat
+}
+
+.tea-step.is-disabled .tea-step__item .tea-step__arrow {
+    background: 0 0
+}
+
+.expense-switch {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #F8F8F8;
+    cursor: pointer
+}
+
+.expense-switch--link {
+    background: 0 0;
+    text-align: left;
+    cursor: none
+}
+
+.expense-switch--link .switch-text {
+    display: inline-block
+}
+
+.expense-switch--link .switch-link {
+    display: block
+}
+
+.expense-switch.is-unfold .icon,.expense-switch.is-unfold .tea-icon {
+    transform: rotate(180deg);
+    transition: all .3s
+}
+
+.expense-card-media {
+    cursor: pointer;
+    transition: all .3s
+}
+
+.expense-card-media h4 {
+    margin: 0 0 8px
+}
+
+.expense-card-media .tea-media__body .link {
+    margin: 0 0 0 5px
+}
+
+.expense-card-media.is-active,.expense-card-media.is-active .tea-text-label,.expense-card-media.is-disabled,.expense-card-media.is-disabled .tea-text-label {
+    color: #bbb;
+    cursor: default
+}
+
+.expense-card-media.is-active .icon,.expense-card-media.is-disabled .icon {
+    filter: grayscale(100%);
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    opacity: .5
+}
+
+.expense-card-media:hover {
+    transform: translateY(-2px)
+}
+
+.expense-card-media:hover h4 {
+    color: #006eff
+}
+
+.expense-card-media.is-active:hover,.expense-card-media.is-disabled:hover {
+    transform: translateY(0)
+}
+
+.expense-card-media.is-active:hover h4,.expense-card-media.is-disabled:hover h4 {
+    color: inherit
+}
+
+.expense-card-media .tea-h4 .tea-alert {
+    top: 0;
+    margin: 0 0 0 5px
+}
+
+.expense-card-media .tea-media__left {
+    padding-right: 20px
+}
+
+.expense-card-media .expense-card-media h4 {
+    margin: 0 0 4px
+}
+
+.expense-label .label-item:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.expense-label .label-item .label-item-title {
+    float: left
+}
+
+.expense-label .label-item .label-item-con {
+    overflow: hidden;
+    padding: 4px 0 0
+}
+
+.expense-label .tea-alert--warning {
+    padding: 3px 14px;
+    border: 0;
+    margin: 0 25px 0 0;
+    font-size: 14px
+}
+
+.expense-alert {
+    margin: 0 0 0 5px;
+    position: relative;
+    display: inline-block;
+    border: none;
+    vertical-align: middle;
+    font-weight: 400;
+    padding: 2px 6px;
+    border-radius: 0
+}
+
+.expense-alert .tea-alert__info {
+    display: inline-block;
+    transform: scale(.9)
+}
+
+.expense-alert-icon .tea-alert__info {
+    position: relative;
+    padding-left: 23px
+}
+
+.expense-alert-icon .icon-notice--yellow {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.expense-text-list .text-list {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 820px;
+    justify-content: flex-start
+}
+
+.expense-text-list .text-list-item {
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    width: 260px;
+    justify-content: space-between;
+    margin-right: calc((100% - 780px)/ 3)
+}
+
+.expense-text-list .text-list-item-info {
+    max-width: 170px
+}
+
+.expense-text-list .text-list-item-act {
+    margin: 0 10px 0 5px;
+    flex-grow: 1
+}
+
+.expense-text-list .text-list-item-act .icon {
+    top: -2px
+}
+
+.expense-figure {
+    position: relative
+}
+
+.expense-figure-con {
+    position: relative;
+    width: 600px;
+    height: 134px;
+    background-image: url(img/pic-figure.png);
+    background-size: 100% auto
+}
+
+.expense-figure-txt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%)
+}
+
+.expense-tag .expense-tag-act,.expense-tag .expense-tag-input,.expense-tag .expense-tag-list,.expense-tag .expense-tag-tip {
+    vertical-align: top
+}
+
+.expense-tag .tea-tag--edit {
+    padding: 0 35px 0 20px
+}
+
+.expense-tag .tea-tag {
+    line-height: 28px;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+    background: #fff
+}
+
+.expense-tag .tea-tag .icon {
+    position: absolute;
+    right: 15px;
+    bottom: 6px
+}
+
+.expense-tag .tea-input {
+    vertical-align: middle
+}
+
+.expense-tag .tea-tag .tea-icon-dismiss {
+    bottom: 6px
+}
+
+.expense-tag-input,.expense-tag-list {
+    display: inline-block
+}
+
+.expense-tag-tip {
+    line-height: 30px;
+    display: inline-block
+}
+
+.expense-tag-input .tea-input {
+    width: 140px;
+    margin: 0 10px 0 0
+}
+
+.expense-tag-hd {
+    padding: 8px 0
+}
+
+.expense-tag-title {
+    font-size: 12px;
+    font-weight: 700
+}
+
+.expense-tag-title-info {
+    font-size: 12px;
+    color: #888;
+    font-weight: 400
+}
+
+.expense-tag-act {
+    display: inline-block;
+    cursor: pointer
+}
+
+.expense-tag-act .tea-tag:hover {
+    background: #f2f2f2
+}
+
+.expense-tag-btn a {
+    padding: 5px
+}
+
+.expense-tag-act .tea-tag {
+    padding: 0 25px
+}
+
+.expense-tag-act .tea-tag .tea-icon {
+    position: relative;
+    top: 2px;
+    margin: 0 3px 0 0
+}
+
+.expense-tag-input .tea-icon-loading {
+    margin-left: 4px
+}
+
+.expense-tag-input-tip {
+    display: block;
+    padding: 2px 0 0
+}
+
+.expense-upload {
+    font-size: 12px;
+    margin-bottom: 15px
+}
+
+.expense-upload-inner {
+    box-sizing: border-box;
+    display: table;
+    width: 100%;
+    table-layout: fixed
+}
+
+.expense-upload-object {
+    position: relative;
+    display: table-cell;
+    width: 100px;
+    height: 60px;
+    vertical-align: middle;
+    background: #E9F2FF;
+    text-align: center
+}
+
+.expense-upload-img {
+    height: 100%;
+    box-sizing: border-box
+}
+
+.expense-upload-btn,.expense-upload-info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    bottom: 0;
+    line-height: 60px
+}
+
+.expense-upload-btn {
+    cursor: pointer
+}
+
+.expense-upload-object .icon {
+    vertical-align: -4px;
+    margin: 0 2px 0 0
+}
+
+.expense-upload-info {
+    color: #fff
+}
+
+.expense-upload-text {
+    margin: 3px 0 0
+}
+
+.expense-upload-btn .tea-icon {
+    vertical-align: -3px;
+    margin: 0 5px 0 0
+}
+
+.expense-upload-body {
+    display: table-cell;
+    padding: 0 0 0 15px;
+    vertical-align: top
+}
+
+.expense-upload-del {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 100%
+}
+
+.expense-upload-img {
+    position: relative;
+    background-size: cover;
+    background-position: center
+}
+
+.expense-upload.is-loading .expense-upload-img:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #001E45;
+    opacity: .5
+}
+
+.expense-upload.is-success .expense-upload-img {
+    border: 1px solid #ccc
+}
+
+.expense-menu {
+    font-size: 0
+}
+
+.expense-menu-item {
+    display: inline-block;
+    font-size: 2px
+}
+
+.expense-menu-link {
+    padding: 5px;
+    color: #444;
+    margin: 0 0 0 10px
+}
+
+.expense-menu-link:hover {
+    background-color: rgba(0,0,0,.05);
+    text-decoration: none
+}
+
+.expense-menu .icon {
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    margin: 0 4px 0 0
+}
+
+.expense-message {
+    width: 600px;
+    padding: 10px 0
+}
+
+.expense-message-edit {
+    padding: 5px;
+    cursor: pointer
+}
+
+.expense-message-tip {
+    display: none !important;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    margin: 0 0 0 8px
+}
+
+.expense-message-tip .tea-icon {
+    margin: 0 3px 0 0
+}
+
+.expense-message-label {
+    margin: 0 0 0 20px;
+    float: right
+}
+
+.expense-message-send {
+    margin: -2px 0 0 8px
+}
+
+.expense-message-send.is-disabled {
+    color: #bbb;
+    cursor: not-allowed
+}
+
+.expense-message-send.is-disabled:hover {
+    text-decoration: none
+}
+
+.expense-message-text {
+    margin-left: 8px
+}
+
+.expense-action-panel-inner {
+    background: #f9f9f9;
+    padding: 22px 0;
+    text-align: center
+}
+
+.expense-action-panel .tea-input {
+    width: 350px;
+    height: 36px
+}
+
+.expense-action-panel-body {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    position: relative;
+    text-align: left;
+    vertical-align: top
+}
+
+.expense-action-panel-btn {
+    display: inline-block
+}
+
+.expense-action-panel .tea-btn {
+    height: 36px
+}
+
+.expense-action-panel-info {
+    white-space: nowrap;
+    margin: 6px 0 0;
+    max-width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.expense-action-panel-info a {
+    margin: 0 10px 0 0
+}
+
+.expense-action-panel-s {
+    width: 250px
+}
+
+.expense-action-panel-s .expense-action-panel-inner {
+    background: 0 0;
+    padding: 0;
+    text-align: left
+}
+
+.expense-action-panel-s .expense-action-panel-body,.expense-action-panel-s .expense-action-panel-btn,.expense-action-panel-s .expense-input-panel {
+    display: block;
+    margin: 0
+}
+
+.expense-action-panel-s .tea-input {
+    width: 220px
+}
+
+.expense-action-panel-s .expense-action-panel-btn {
+    text-align: right;
+    padding: 10px 0 0
+}
+
+.expense-action-panel-s .expense-btn-link {
+    margin: 0 0 0 15px
+}
+
+.expense-action-panel-vertical .expense-action-panel-body,.expense-action-panel-vertical .expense-action-panel-btn,.expense-action-panel-vertical .expense-input-panel {
+    display: block;
+    margin: 0
+}
+
+.expense-action-panel-vertical .expense-action-panel-btn {
+    text-align: right;
+    padding: 10px 0 0
+}
+
+.expense-action-panel-vertical .expense-btn-link {
+    margin: 0 0 0 20px
+}
+
+.expense-action-panel-vertical .expense-action-panel-inner {
+    background: 0 0;
+    padding: 0;
+    text-align: left
+}
+
+.expense-input-panel {
+    position: relative;
+    display: table-cell
+}
+
+.expense-input-panel-txt {
+    margin-left: 8px
+}
+
+.expense-input-panel-unit .tea-input {
+    padding-right: 18px
+}
+
+.expense-input-panel-unit .expense-input-panel-txt {
+    position: absolute;
+    right: 8px;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.expense-input-panel-title {
+    margin-right: 8px
+}
+
+.expense-input-panel-s .tea-input {
+    width: 62px
+}
+
+.expense-changer-title {
+    margin-right: 8px;
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.expense-verify {
+    font-size: 12px
+}
+
+.expense-verify-img {
+    background: #f1f1f1
+}
+
+.expense-verify-img,.expense-verify-txt {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.expense-verify-txt {
+    margin: 0 0 0 10px
+}
+
+.expense-verify-img img {
+    display: block;
+    width: 85px;
+    height: 35px
+}
+
+.expense-calendar {
+    position: relative;
+    width: 630px;
+    height: 310px
+}
+
+.expense-calendar-ft {
+    position: absolute;
+    left: 0;
+    bottom: 0
+}
+
+.expense-calendar-ft button {
+    margin-right: 10px
+}
+
+.expense-contract-history-table .tea-table__box td {
+    vertical-align: top
+}
+
+.expense-contract-history-table .expense-table-edit a,.expense-contract-history-table .expense-table-edit span {
+    padding: 0 5px 3px
+}
+
+.expense-contract-history-table .tea-table__box tbody tr .tea-btn {
+    opacity: 0;
+    padding: 2px 5px 3px
+}
+
+.expense-contract-history-table .tea-table__box tbody tr:hover .tea-btn {
+    opacity: 1
+}
+
+.expense-contract-history-table .expense-table-edit-remark {
+    color: #888
+}
+
+.expense-contract-history-table .expense-table-edit-remark:hover {
+    text-decoration: none
+}
+
+.expense-contract-history-table .tea-btn--icon:hover {
+    background: 0 0
+}
+
+.expense-contract-history-table .tea-table__box tbody tr.is-disabled {
+    opacity: 1;
+    cursor: auto
+}
+
+.expense-contract-history-table .tea-table__box tr td a.is-disabled,.expense-contract-history-table .tea-table__box tr.is-disabled td,.expense-contract-history-table .tea-table__box tr.is-disabled td a {
+    cursor: auto
+}
+
+.expense-contract-history-table .tea-table__box tr.is-disabled td a {
+    cursor: pointer
+}
+
+.fixed .expense-layout-footer-inner.expense-card-contract-detail-btn {
+    display: flex;
+    align-items: center
+}
+
+.expense-card-contract-detail {
+    margin-bottom: 100px
+}
+
+.expense-contract-history-table .tea-table+.tea-pagination {
+    padding-bottom: 0
+}
+
+.expense-table-edit-confirm .tea-bubble__inner {
+    padding-bottom: 5px
+}
+
+.expense-table-edit-confirm .tea-popconfirm__footer {
+    margin-top: 5px
+}
+
+.expense-table-edit-confirm .tea-textarea {
+    height: 50px
+}
+
+.expense-card-contract-detail-btn .tea-btn {
+    margin-right: 10px
+}
+
+.expense-card-contract-detail-btn .tea-btn.tea-btn.is-disabled {
+    border-color: #ddd;
+    background: #f2f2f2;
+    color: #bbb;
+    z-index: 1
+}
+
+.expense-card-contract-detail-info .tea-form.size-full-width {
+    display: block
+}
+
+.expense-card-contract-detail-info .expense-form-label-phone .tea-input-group {
+    display: inline-flex;
+    align-items: center;
+    width: 100%
+}
+
+.expense-card-contract-detail-info .expense-form-label-phone .tea-select {
+    width: auto
+}
+
+.expense-alert-panel {
+    display: inline-block;
+    margin: 22px 0 0
+}
+
+.expense-header-right-features {
+    display: inline-flex;
+    height: auto;
+    align-items: center
+}
+
+.expense-header-right-features .tea-dropdown-btn.tea-dropdown__header {
+    min-width: 100px
+}
+
+.expense-header-right-features .tea-fz-reset {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer
+}
+
+.expense-header-right-features .tea-fz-reset .tea-icon {
+    margin-left: 16px;
+    margin-right: 4px
+}
+
+.expense-order-card-header .tea-justify-grid .tea-justify-grid__col .tea-search {
+    width: 240px
+}
+
+.expense-order-card-header .tea-search .tea-input--search {
+    padding-right: 40px
+}
+
+.expense-order-card-header .tea-datepicker {
+    margin-right: 10px
+}
+
+.expense-order-card-header .tea-justify-grid__col--right .tea-btn:hover {
+    background: 0 0
+}
+
+.expense-order-table .tea-table__header {
+    background: #FBFBFB
+}
+
+.expense-order-table .tea-btn--icon:hover {
+    background: 0 0
+}
+
+.expense-order-need-money {
+    font-size: 12px;
+    line-height: 17px
+}
+
+.expense-order-price {
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    line-height: 1.5;
+    box-sizing: border-box;
+    color: #FF7643
+}
+
+.expense-order-price-big {
+    font-size: 16px;
+    font-weight: 500
+}
+
+.expense-order-detail-header {
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 6px 0 16px;
+    border-bottom: 1px solid #ddd
+}
+
+.expense-order-detail-header .tea-justify-grid__col {
+    font-size: inherit
+}
+
+.expense-order-detail-header .tea-text-warning {
+    margin-right: 12px
+}
+
+.expense-order-detail-header .expense-order-detail-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 24px
+}
+
+.expense-order-detail-header .expense-order-detail-title .tea-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 12px
+}
+
+.expense-order-detail-header .tea-btn.tea-btn--link {
+    line-height: 1.5;
+    margin-left: 4px;
+    vertical-align: baseline
+}
+
+.expense-order-detail-overflow-point {
+    width: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-right: 12px
+}
+
+.expense-order-detail-table .tea-form .tea-form__controls,.expense-order-detail-table .tea-form .tea-form__label {
+    padding-right: 12px
+}
+
+.expense-order-contract:hover,.expense-order-phone:hover {
+    color: #006EFF
+}
+
+.expense-inline-text-link {
+    padding: 0 5px;
+    vertical-align: baseline
+}
+
+.expense-order-style-bold {
+    font-weight: 500
+}
+
+.expense-order-style-margin5 {
+    margin-left: 5px
+}
+
+.expense-order-style-underline {
+    border-bottom: 1px dashed #e54545;
+    cursor: pointer
+}
+
+.expense-order-style-underline-bubble .tea-btn.tea-btn--link {
+    padding: 0 5px
+}
+
+.expense-order-style-underline-g {
+    display: inline-block;
+    border-bottom: 1px dashed #0abf5b;
+    cursor: pointer
+}
+
+.expense-order-style-through {
+    text-decoration: line-through #bbb
+}
+
+.expense-order-relative {
+    position: relative;
+    white-space: nowrap
+}
+
+.expense-order-relative .tea-btn.tea-btn--link {
+    margin-right: 0
+}
+
+.expense-order-absolute-left {
+    position: absolute;
+    right: calc(100% + 4px);
+    padding: 0;
+    margin: 0
+}
+
+.expense-order-price-space {
+    margin: 0 18px 0 0
+}
+
+.expense-order-absolute-right.tea-icon {
+    position: absolute;
+    left: calc(100% + 4px);
+    padding: 0;
+    margin: 0
+}
+
+.expense-order-detail-table .tea-table__box td {
+    vertical-align: top
+}
+
+.expense-order-detail-table td .tea-form:first-child .tea-form__item:first-child>* {
+    padding-top: 0
+}
+
+.expense-order-detail-table .tea-table__box .tea-text-right {
+    padding-right: 40px
+}
+
+.tea-grid .expense-order-margintop2 {
+    padding-top: 2px
+}
+
+.tea-grid .expense-order-margintop26 {
+    padding-top: 26px
+}
+
+.expense-order-gift {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FF7643;
+    border: 1px solid #FF7643
+}
+
+.expense-order-font-color-green {
+    color: #0abf5b
+}
+
+.detail-icon-handle-fail {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 35.31% 99.53999999999999%;
+    background-size: 695.8333333333333% 550%;
+    background-repeat: no-repeat
+}
+
+.detail-icon-buy-success {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 0.35000000000000003% 99.53999999999999%;
+    background-size: 695.8333333333333% 550%;
+    background-repeat: no-repeat
+}
+
+.detail-icon-handling {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 52.800000000000004% 99.53999999999999%;
+    background-size: 695.8333333333333% 550%;
+    background-repeat: no-repeat
+}
+
+.detail-icon-cancle {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 17.83% 99.53999999999999%;
+    background-size: 695.8333333333333% 550%;
+    background-repeat: no-repeat
+}
+
+.detail-icon-past-due {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 70.28% 99.53999999999999%;
+    background-size: 695.8333333333333% 550%;
+    background-repeat: no-repeat
+}
+
+.detail-icon-waitpay {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 77.97% 64.35%;
+    background-size: 695.8333333333333% 550%;
+    background-repeat: no-repeat
+}
+
+.detail-icon-refunded {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 99.65% 0.45999999999999996%;
+    background-size: 695.8333333333333% 550%;
+    background-repeat: no-repeat
+}
+
+.expense-order-phone .tea-icon {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 97.8% 20.560000000000002%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-order-phone .tea-icon:hover {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 70.13000000000001% 76.21%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-order-contract .tea-icon {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 97.8% 71.37%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-order-contract .tea-icon:hover {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 61.95% 37.5%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-order-card-header .tea-justify-grid__col--right .tea-btn .tea-icon-download:hover {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 97.8% 56.85%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-dialog-title {
+    font-size: 14px;
+    color: #000;
+    padding: 0 0 16px
+}
+
+.expense-dialog-no-header .tea-dialog__inner {
+    width: 500px
+}
+
+.expense-dialog-no-header .tea-dialog__header {
+    display: none
+}
+
+.expense-dialog-no-header .expense-dialog-banner {
+    height: 100px;
+    background: url(img/pic-banner.png) center;
+    background-size: cover;
+    margin: -25px -25px 0
+}
+
+.expense-dialog-no-header .expense-list {
+    margin-top: 10px
+}
+
+.expense-dialog-no-header .tea-dialog__footer {
+    margin-top: 18px
+}
+
+.expense-dialog-no-close .tea-dialog__headertitle {
+    font-size: 20px
+}
+
+.expense-dialog-no-close .tea-dialog__header .tea-btn--icon {
+    display: none
+}
+
+.expense-list-checkbox li {
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    color: #000;
+    font-size: 14px
+}
+
+.expense-list-checkbox li:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(img/slice/icon-checkbox.svg);
+    vertical-align: middle;
+    margin: 0 5px 0 0
+}
+
+.expense-slider-img-item {
+    height: 270px;
+    background-size: cover;
+    background-position: center
+}
+
+.expense-slider-act-wrap {
+    text-align: center
+}
+
+.expense-slider-act-list {
+    display: inline-block
+}
+
+.expense-slider-act-item {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer
+}
+
+.expense-slider-act-item::before {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #CECECE;
+    border-radius: 100%
+}
+
+.expense-slider-act-item-current::before {
+    background: #006EFF
+}
+
+.tea-justify-grid .tea-justify-grid__col .expense-capitaldivision-text {
+    color: #888;
+    font-size: 14px
+}
+
+.tea-justify-grid .tea-justify-grid__col .expense-capitaldivision-price {
+    font-size: 14px
+}
+
+.expense-group-item+.expense-group-item {
+    margin-top: 10px
+}
+
+.expense-group-item .expense-group-item-button+.expense-group-item-button {
+    margin-left: -6px
+}
+
+.expense-icon.expense-icon-add {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 89.62% 93.15%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-icon.expense-icon-add:active {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 97.8% 35.08%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-icon.expense-icon-delete {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 89.62% 85.89%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-icon.expense-icon-delete:active {
+    background-image: url(sprite/expense-201908061631.svg);
+    background-position: 95.28% 85.89%;
+    background-size: 2087.5% 1650%;
+    background-repeat: no-repeat
+}
+
+.expense-group-item-button:hover {
+    background-color: transparent
+}
+
+.expense-group-item .tea-dropdown__header.tea-dropdown-btn {
+    padding-right: 78px
+}
+
+.expense-group-item .expense-group-item-button {
+    padding-left: 8px
+}
+
+.expense-account-button {
+    padding-left: 30px;
+    padding-right: 30px
+}
+
+.tea-input.size-s.expense-group-item-input {
+    width: 172px
+}
+
+.expense-capitaldivision-stepper .tea-step__arrow {
+    margin-left: 45px;
+    margin-right: 45px
+}
+
+.expense-process .tea-bubble__inner {
+    width: 350px;
+    max-height: 310px;
+    overflow-y: auto
+}
+
+.expense-invocice-info-card .expense-form {
+    padding-top: 16px
+}
+
+.expense-card-invoice-sum .expense-action-panel {
+    margin: 0 -20px -20px
+}
+
+.expense-card-invoice-info .expense-iv-after-table-bar:nth-child(1) {
+    margin-top: 30px
+}
+
+.expense-card-step .tea-step {
+    text-align: center
+}
+
+.expense-card-step .tea-card__content {
+    padding: 0 0 30px
+}
+
+.expense-card-step-progress .tea-step {
+    padding-bottom: 20px
+}
+
+.expense-card-step-empty .tea-card__title {
+    margin-bottom: 0
+}
+
+.expense-card-step-detail .tea-card__body {
+    padding: 20px 0 0
+}
+
+.expense-card-step-detail .expense-step-wrap {
+    padding: 0 20px
+}
+
+.expense-card-step-detail .expense-step {
+    margin: 26px 0 0;
+    border-bottom: 1px solid #eee;
+    padding: 0 0 18px
+}
+
+.expense-card-step-detail .expense-step:first-child {
+    margin-top: 0
+}
+
+.expense-card-step-detail .expense-step-wrap .expense-step:last-child {
+    border-bottom: 0 none
+}
+
+.expense-alert-info a {
+    padding: 0 5px
+}
+
+.expense-alert-info {
+    margin-bottom: 10px
+}
+
+.expense-grid-contract {
+    margin: 10px -10px 10px 0
+}
+
+.expense-grid-contract .tea-grid__item-8:first-child {
+    padding-left: 0
+}
+
+.expense-card-contract-info {
+    margin-bottom: 20px;
+    padding-bottom: 60px
+}
+
+.expense-card-contract-info .expense-form-panel {
+    width: 600px
+}
+
+.expense-card-contract-info .expense-form .tea-form__item:first-child {
+    width: 485px
+}
+
+.expense-card-contract-info .expense-form {
+    padding: 0
+}
+
+.expense-card-contract-info .tea-form .tea-form__label {
+    width: 75px
+}
+
+.expense-card-contract-info .tea-card__title {
+    margin-bottom: 8px
+}
+
+.expense-card-contract-info .tea-card__body:nth-child(2) {
+    padding-bottom: 0
+}
+
+.expense-card-contract-info .tea-card__header {
+    border: none
+}
+
+.expense-card-contract-info .tea-card__header .tea-justify-grid {
+    margin-bottom: 0;
+    padding: 0 20px
+}
+
+.expense-card-contract-info .tea-card__header .tea-justify-grid__col {
+    padding: 20px 0;
+    border-bottom: 1px solid #DDD
+}
+
+.expense-card-contract-info .tea-card__header h3 {
+    padding: 0
+}
+
+.expense-card-contract-detail .tea-form-title {
+    white-space: nowrap
+}
+
+.expense-card-contract-detail-info {
+    padding-top: 10px
+}
+
+.expense-card-contract-detail-info .tea-grid {
+    border: 1px solid #ddd;
+    margin: 0
+}
+
+.expense-card-contract-detail-info .tea-grid:last-child {
+    border: none;
+    margin-top: 10px
+}
+
+.expense-card-contract-detail-info .tea-grid .expense-card-contract-detail-btn {
+    padding-left: 0
+}
+
+.expense-card-contract-detail-info .tea-grid__item-12 {
+    position: relative;
+    padding: 20px 20px 40px
+}
+
+.expense-card-contract-detail-info .tea-grid__item-12:first-child:after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    right: 0;
+    pointer-events: none;
+    top: 57px;
+    bottom: 77px;
+    background: #ddd
+}
+
+.expense-card-contract-detail-info .tea-grid__item-12:not(:first-child) {
+    padding-left: 48px
+}
+
+.expense-card-contract-detail-info .expense-form-company .tea-form__controls,.expense-card-contract-detail-info .expense-form-company .tea-form__label {
+    padding-bottom: 8px
+}
+
+.expense-card-contract-detail-info .tea-grid:fist-child {
+    display: none
+}
+
+.expense-card-contract-detail-info .tea-segment {
+    margin: 20px 0 10px
+}
+
+.expense-card-contract-detail-info .tea-form-title {
+    margin-bottom: 20px;
+    font-size: 12px
+}
+
+.expense-card-contract-detail-info .tea-input-group {
+    width: 100%
+}
+
+.expense-card-contract-detail-info .tea-input-group .tea-input {
+    width: calc(100% - 64px)
+}
+
+.expense-card-contract-detail-info .tea-input-group__addon .tea-select {
+    width: 64px
+}
+
+.expense-card-contract-detail-info .tea-segment button:not(:first-child) {
+    margin-left: 12px
+}
+
+.expense-card-contract-record {
+    margin-bottom: 20px
+}
+
+.expense-card-contract-record .tea-justify-grid .tea-justify-grid__col--right {
+    padding-right: 0
+}
+
+.expense-card-contract-guide .tea-step {
+    margin-top: 0
+}
+
+.expense-card-contract-guide .tea-step .tea-step__item:last-child {
+    padding-bottom: 0
+}
+
+.expense-card-contract-guide .expense-text-list {
+    width: 80%;
+    margin: 12px 0 0
+}
+
+.expense-card-contract-guide .expense-switch {
+    height: auto;
+    line-height: normal
+}
+
+.expense-card-recharge .expense-num {
+    margin-right: 10px
+}
+
+@media (max-width: 1280px) {
+    .tea-step.expense-step-info .tea-step__item {
+        width:210px
+    }
+
+    .expense-card-media .tea-media__left {
+        padding-right: 5px
+    }
+}
+
+#MAXIM {
+    content: "v_g20191216124918"
+}
